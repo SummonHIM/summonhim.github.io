@@ -2,6 +2,7 @@ cd $(dirname $0)
 git fetch origin gh-pages
 if [ -n "$(git log gh-pages..origin/gh-pages --oneline)" ]; then
     echo 检测到更改，正在合并最新拉取的更改...
+    git restore .
     git merge origin/gh-pages
     echo 正在编译 Jekyll 站点
     sed -i 's/url: "https:\/\/summonhim.top"/url: "https:\/\/8bits.group"/g' _config.yml
