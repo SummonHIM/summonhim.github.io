@@ -7,7 +7,7 @@ runSync() {
     sed -i 's/url: "https:\/\/summonhim.top"/url: "https:\/\/8bits.group"/g' _config.yml
     sed -i "s/title: SummonHIM's Logs/title: 8-Bits Group/g" _config.yml
     sed -i "s/header_text: SummonHIM's Logs/header_text: 八点八位元/g" _config.yml
-    sed -i 's/header_feature_image: http:\/\/www.dmoe.cc\/random.php/header_feature_image: assets\/img\/header\/triangular.jpeg/g' _config.yml
+    sed -i 's/header_feature_image: http:\/\/www.dmoe.cc\/random.php/header_feature_image: https:\/\/api.sunweihu.com\/api\/bing1\/api.php/g' _config.yml
     sed -i 's/chn_website_approve: false/chn_website_approve: true/g' _config.yml
     jekyll build
     echo 正在复制站点到 /var/www/html
