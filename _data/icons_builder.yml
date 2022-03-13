@@ -80,3 +80,8 @@ wordpress:
   pos: ".wordpress.com/"
 youtube:
   pre: "https://www.youtube.com/channel/"
+bilibili:
+  pre: "https://space.bilibili.com/"
+  icon: "fas fa-tv"
+weibo:
+  pre: "https://weibo.com/u/"

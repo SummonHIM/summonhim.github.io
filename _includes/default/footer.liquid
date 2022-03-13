@@ -1,12 +1,23 @@
 <footer class="site-footer">
     <p class="text">
-        {{ site.footer_text | default: "Powered by <a href='https://jekyllrb.com/'>Jekyll</a> with <a href='https://github.com/sylhare/Type-on-Strap'>Type on Strap</a>" }}</p>
-            <div class="footer-icons">
-                <ul>
-                <!-- Social icons from Font Awesome, if enabled -->
-                {% include social/icons.liquid %}
-                </ul>
-            </div>
+        {% if site.chn_website_approve == true %}
+        <a href="https://beian.miit.gov.cn/" target="_blank">{{ site.chn_website_approve_region }}ICP备{{
+            site.chn_website_approve_icp }}号</a>
+        |
+        <a target="_blank"
+            href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode={{ site.chn_website_approve_police }}">
+            <img style="padding: 0%;" src="http://www.beian.gov.cn/img/new/gongan.png">{{
+            site.chn_website_approve_region }}公网安备 {{ site.chn_website_approve_police }} 号
+        </a>
+        <br>
+        {% endif %}
+        {{ site.footer_text | default: "Powered by <a href='https://jekyllrb.com/'>Jekyll</a> with <a
+            href='https://github.com/sylhare/Type-on-Strap'>Type on Strap</a>" }}
+    </p>
+    <div class="footer-icons">
+        <ul>
+            <!-- Social icons from Font Awesome, if enabled -->
+            {% include social/icons.liquid %}
+        </ul>
+    </div>
 </footer>
-
-

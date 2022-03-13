@@ -6,14 +6,14 @@ calendly:
 dribbble:
 facebook:
 flickr:
-github: sylhare
-gitlab:
+github: SummonHIM
+gitlab: SummonHIM
 google-scholar:   # e.g. "WXAAOb0AAAAJ"
-instagram:
+instagram: SummonHIMs
 hacker-news:
 keybase:
 linkedin:
-mail:             # e.g. "sam@mail.com"
+mail: summonhim@foxmail.com            # e.g. "sam@mail.com"
 map:              # e.g. "34.0886/-118.3191"
 mastodon:         # e.g. "fostodon.org/@sam"
 matrix:           # e.g. "@sam:matrix.org"
@@ -26,12 +26,14 @@ soundcloud:
 sms:              # e.g. "+11111111111"
 stack-exchange:   # e.g. "123456789"
 stack-overflow:   # e.g. "123456789"
-steam:
-telegram:
+steam: SummonHIM
+telegram: SummonHIM
 tumblr:
 twitch:
-twitter:
+twitter: SummonHIMs
 vimeo:
 vk:
 wordpress:
-youtube:          # e.g. "UCqECaJ8Gagnn7YCbPEzWH6g"
+youtube:         # e.g. "UCqECaJ8Gagnn7YCbPEzWH6g"
+bilibili: 21899295
+weibo: 5993604663
