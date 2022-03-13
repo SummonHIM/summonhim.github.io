@@ -5,7 +5,7 @@ runSync() {
     sed -i 's/url: "https:\/\/summonhim.top"/url: "https:\/\/8bits.group"/g' _config.yml
     sed -i 's/header_feature_image: http:\/\/www.dmoe.cc\/random.php/header_feature_image: assets\/img\/header\/triangular.jpeg/g' _config.yml
     sed -i 's/chn_website_approve: false/chn_website_approve: true/g' _config.yml
-    Jekyll build
+    jekyll build
     echo 正在复制站点到 /var/www/html
     cp -r _site/* /var/www/html
     cp -r /var/www/work/buildwith/* /var/www/html
