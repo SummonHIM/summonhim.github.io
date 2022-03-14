@@ -22,6 +22,18 @@
     <ul class="hide">
         {% assign name_page = "" %}
 
+        {% for page in site.data.navbar %}
+            {% unless page.title == null %}
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="{{ page.title }}" title="{{ page.title }}" href="{{ page.url | relative_url }}" {% if page.blank == true%}target="_blank"{% endif %}>
+                    {% if page.icon %} <i class="fas {{ page.icon }}" aria-hidden="true"></i>
+                    {% else %} {{ page.title }} {% endif%}
+                </a>
+            </li>
+            {% endunless %}
+        {% endfor %}
+
         {% for page in site.pages %}
             {% unless page.title == null or page.hide or name_page contains page.title %}
             <li class="separator"> | </li>

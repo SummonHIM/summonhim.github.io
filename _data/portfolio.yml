@@ -1,0 +1,29 @@
+- title: "NPS 穿透"
+  url: "https://8bits.group/nps"
+  img: "assets/img/portfolio/nps.png"
+  blank: true
+
+- title: "简易 IPFS"
+  url: "https://8bits.group/eipfs"
+  img: "assets/img/portfolio/eipfs.png"
+  blank: true
+
+- title: "File Browser"
+  url: "https://8bits.group/filebrowser"
+  img: "assets/img/portfolio/filebrowser.png"
+  blank: true
+
+- title: "网速测试"
+  url: "https://8bits.group/speedtest"
+  img: "assets/img/portfolio/speedtest.png"
+  blank: true
+
+- title: "Netdata"
+  url: "https://8bits.group/netdata"
+  img: "assets/img/portfolio/netdata.png"
+  blank: true
+  
+- title: "phpMyAdmin"
+  url: "https://8bits.group/phpmyadmin"
+  img: "assets/img/portfolio/phpmyadmin.png"
+  blank: true
