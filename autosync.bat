@@ -31,10 +31,12 @@ git restore .
 git merge origin/gh-pages
 echo 正在删除旧站点...
 rmdir /s /q "C:\Program Files\nginx-1.20.2\html"
-rmdir /s /q _site
+if exist "_site" (
+	rmdir /s /q _site
+)
 echo 正在编译 Jekyll 站点...
 xcopy /H /Y ..\portfolio.yml _data\portfolio.yml
-jekyll build && ..\autosync.bat copy
+jekyll build && autosync.bat copy
 exit
 
 :copy
