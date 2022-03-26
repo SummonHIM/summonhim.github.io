@@ -15,6 +15,7 @@ runSync() {
     echo 正在复制站点到 /var/www/html...
     cp -r _site/* /var/www/html
     cp -r /var/www/work/buildwith/* /var/www/html
+    chown www-data -R /var/www/html
 }
 
 cd $(dirname $0)
