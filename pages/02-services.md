@@ -1,7 +1,7 @@
 --- 
 layout: page
 title : 应用项目
-permalink: /portfolio/
+permalink: /services/
 feature-img: "assets/img/header/computer.jpeg"
 tags: [Page]
 ---
