@@ -27,3 +27,8 @@
   url: "https://8bits.group/phpmyadmin"
   img: "assets/img/portfolio/phpmyadmin.png"
   blank: true
+
+- title: "直播系统"
+  url: "https://8bits.group/live"
+  img: "assets/img/portfolio/live.png"
+  blank: true
