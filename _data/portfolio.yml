@@ -32,3 +32,8 @@
   url: "https://8bits.group/live"
   img: "assets/img/portfolio/live.png"
   blank: true
+
+- title: "Jellyfin"
+  url: "https://service.summonhim.top/jellyfin"
+  img: "assets/img/portfolio/jellyfin.png"
+  blank: true
