@@ -54,7 +54,7 @@ collections:
 # BUILD SETTINGS
 sass:
   style: compressed
-plugins: [jekyll-paginate, jekyll-seo-tag, jekyll-feed]
+plugins: [jekyll-paginate, jekyll-seo-tag, jekyll-feed, jekyll-liquify]
 exclude: [".jekyll-cache", ".jekyll-metadata", ".idea", "vendor/*", "assets/node_modules/*", ".vscode/*", "autosync.sh", "autosync.bat"]
 
 # theme: type-on-strap                                  # if using the theme as a jekyll theme gem
