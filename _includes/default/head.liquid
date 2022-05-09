@@ -15,6 +15,28 @@
     </script>
     {% endif %}
 
+    {% if site.color_theme == 'auto' %}
+    <script>
+        let listeners = {
+            dark: (mediaQueryList) => {
+                if (mediaQueryList.matches) {
+                    console.log("System dark mode is activated")
+                    setMode("dark")
+                }
+            },
+            light: (mediaQueryList) => {
+                if (mediaQueryList.matches) {
+                    console.log("System light mode is activated")
+                    setMode("light")
+                }
+            }
+        }
+
+        window.matchMedia('(prefers-color-scheme: dark)').addListener(listeners.dark)
+        window.matchMedia('(prefers-color-scheme: light)').addListener(listeners.light)
+    </script>
+    {% endif %}
+
     <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
     <script defer src="{{ '/assets/js/main.min.js' | relative_url }}"></script>
 
