@@ -13,7 +13,7 @@ header_text: SummonHIM's Logs                           # Change Blog header tex
 header_feature_image: http://www.dmoe.cc/random.php
 header_feature_image_responsive: true
 footer_text: >
-  Powered by <a target="_blank" href="https://jekyllrb.com/">Jekyll</a> with <a target="_blank" href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a><br>© 2022 <a href="https://summonhim.top/">SummonHIM</a>
+  Powered by <a target="_blank" href="https://jekyllrb.com/">Jekyll</a> with <a target="_blank" href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a><br>© 2022 <a href="https://summonhim.top/">SummonHIM</a> | <a href="/payment">Donate</a>
 chn_website_approve: false
 chn_website_approve_region: "粤"
 chn_website_approve_icp: 2021004741
