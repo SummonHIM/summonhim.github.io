@@ -3,28 +3,23 @@
   img: "assets/img/portfolio/nps.png"
   blank: true
 
-- title: "简易 IPFS"
-  url: "https://8bits.group/eipfs"
-  img: "assets/img/portfolio/eipfs.png"
-  blank: true
-
-- title: "File Browser"
-  url: "https://8bits.group/filebrowser"
-  img: "assets/img/portfolio/filebrowser.png"
+- title: "OneManager"
+  url: "https://onemanager.summonhim.top/"
+  img: "assets/img/portfolio/onemanager.png"
   blank: true
 
 - title: "网速测试"
-  url: "https://8bits.group/speedtest"
+  url: "https://service.summonhim.top/speedtest"
   img: "assets/img/portfolio/speedtest.png"
   blank: true
 
 - title: "Netdata"
-  url: "https://8bits.group/netdata"
+  url: "https://service.summonhim.top/netdata"
   img: "assets/img/portfolio/netdata.png"
   blank: true
   
 - title: "phpMyAdmin"
-  url: "https://8bits.group/phpmyadmin"
+  url: "https://service.summonhim.top/phpmyadmin"
   img: "assets/img/portfolio/phpmyadmin.png"
   blank: true
 

@@ -20,13 +20,11 @@
         let listeners = {
             dark: (mediaQueryList) => {
                 if (mediaQueryList.matches) {
-                    console.log("System dark mode is activated")
                     setMode("dark")
                 }
             },
             light: (mediaQueryList) => {
                 if (mediaQueryList.matches) {
-                    console.log("System light mode is activated")
                     setMode("light")
                 }
             }
