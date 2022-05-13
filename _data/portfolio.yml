@@ -32,3 +32,8 @@
   url: "https://service.summonhim.top/jellyfin"
   img: "assets/img/portfolio/jellyfin.png"
   blank: true
+
+- title: "Element 网页客户端"
+  url: "https://service.summonhim.top/jellyfin"
+  img: "assets/img/portfolio/element.png"
+  blank: true
