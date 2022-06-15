@@ -8,7 +8,7 @@ author: SummonHIM
 
 1. 打开已经搭建好 SubConverter WebUI 的网页
 
-> 此处推荐使用：[acl4ssr-sub](https://acl4ssr-sub.github.io/)。网页前端只负责生成，并不会收集个人订阅信息。如果实在是担心则可前去[源项目仓库](https://github.com/CareyWang/sub-web)自行构建。
+> 此处推荐使用：[https://sub-web.netlify.app](https://sub-web.netlify.app)。网页前端只负责生成，并不会收集个人订阅信息。如果实在是担心则可前去[源项目仓库](https://github.com/CareyWang/sub-web)自行构建。
 
 1. 订阅链接填入自己机场的订阅链接，后端地址尽量使用自己搭建的后端，远程配置填入：`https://summonhim.top/sub-stuffs/Clash/Config/Deep_Rock_Galactic.ini`，更多选项中勾选：`启用 UDP`。
 
