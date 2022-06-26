@@ -4,12 +4,15 @@ echo --- %date% %time% ---
 
 echo 正在获取远程仓库数据...
 git fetch origin gh-pages
+echo,
+
 echo 正在检查 gh-pages 分支是否有更新...
 for /f "delims=" %%i in ('git log gh-pages..origin/gh-pages --oneline') do set fetchStatus=%%i
-echo fetchStatus: %fetchStatus%
+echo,
 
 if "%1" == "force" (
 	echo 启用强制编译...
+	echo,
 	goto build
 )
 
@@ -25,9 +28,10 @@ if "%fetchStatus%" == "" (
 echo 正在清空之前的更改...
 git restore .
 git merge origin/gh-pages
+echo,
 echo 正在编译 Jekyll 站点...
-xcopy /H /Y ..\portfolio.yml _data\portfolio.yml
-jekyll build && autosync.bat copy
+xcopy /H /Y ..\htmlbuild\portfolio.yml _data\portfolio.yml
+jekyll build
 goto exit
 
 :exit
