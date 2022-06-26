@@ -20,6 +20,7 @@ if "%fetchStatus%" == "" (
 	echo 未检测到更新...
 	goto quit
 ) else (
+	echo 上游更改内容：[%fetchStatus%]
 	echo 检测到更改！正在合并最新拉取的更改并尝试编译...
 	goto build
 )
