@@ -1,5 +1,6 @@
 @echo off
 cd %~dp0
+set fetchStatus=
 echo --- %date% %time% ---
 
 echo 正在获取远程仓库数据...
