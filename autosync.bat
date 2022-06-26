@@ -34,6 +34,8 @@ echo,
 echo ÕıÔÚ±àÒë Jekyll Õ¾µã...
 xcopy /H /Y ..\htmlbuild\portfolio.yml _data\portfolio.yml
 jekyll build
+echo,
+xcopy /E /H /Y ..\htmlmount\* _site\*
 goto quit
 
 :quit
