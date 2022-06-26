@@ -18,7 +18,7 @@ if "%1" == "force" (
 
 if "%fetchStatus%" == "" (
 	echo 未检测到更新...
-	goto exit
+	goto quit
 ) else (
 	echo 检测到更改！正在合并最新拉取的更改并尝试编译...
 	goto build
@@ -32,6 +32,7 @@ echo,
 echo 正在编译 Jekyll 站点...
 xcopy /H /Y ..\htmlbuild\portfolio.yml _data\portfolio.yml
 jekyll build
-goto exit
+goto quit
 
-:exit
+:quit
+timeout /T 1 /nobreak >nul
