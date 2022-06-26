@@ -32,7 +32,7 @@ git restore .
 git merge origin/gh-pages
 echo,
 echo ÕıÔÚ±àÒë Jekyll Õ¾µã...
-xcopy /H /Y ..\htmlbuild\portfolio.yml _data\portfolio.yml
+xcopy /E /H /Y ..\htmlbuild\* *
 jekyll build && xcopy /E /H /Y ..\htmlafter\* _site\*
 goto quit
 
