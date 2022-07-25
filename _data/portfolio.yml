@@ -1,21 +1,16 @@
 - title: "Jellyfin"
-  url: "https://service.summonhim.top/jellyfin"
+  url: "/jellyfin"
   img: "assets/img/portfolio/jellyfin.png"
   blank: true
 
 - title: "Element 网页客户端"
-  url: "https://service.summonhim.top/element"
+  url: "/element"
   img: "assets/img/portfolio/element.png"
   blank: true
 
 - title: "直播系统"
-  url: "https://service.summonhim.top/live"
+  url: "/live"
   img: "assets/img/portfolio/live.png"
-  blank: true
-
-- title: "OneManager"
-  url: "https://service.summonhim.top/onemanager/"
-  img: "assets/img/portfolio/onemanager.png"
   blank: true
 
 - title: "NPS 穿透"
@@ -24,16 +19,16 @@
   blank: true
 
 - title: "网速测试"
-  url: "https://service.summonhim.top/speedtest"
+  url: "/speedtest"
   img: "assets/img/portfolio/speedtest.png"
   blank: true
 
 - title: "Netdata"
-  url: "https://service.summonhim.top/netdata"
+  url: "/netdata"
   img: "assets/img/portfolio/netdata.png"
   blank: true
   
 - title: "phpMyAdmin"
-  url: "https://service.summonhim.top/phpmyadmin"
+  url: "/phpmyadmin"
   img: "assets/img/portfolio/phpmyadmin.png"
   blank: true
