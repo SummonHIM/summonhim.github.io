@@ -5,7 +5,7 @@ slug: "applications"
 links:
   - title: "SummonSkin"
     description: "Minecraft 皮肤站。"
-    website: https://jellyfin.summonhim.top:8443/
+    website: https://skin.summonhim.top/
 
   - title: "Jellyfin"
     description: "个人影视库。"
