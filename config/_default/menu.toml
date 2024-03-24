@@ -1,0 +1,46 @@
+# Configure main menu and social menu
+# [[main]]
+# identifier = "skin"
+# name = "皮肤站"
+# url = "https://skin.summonhim.top/"
+# weight = 10
+# [main.params]
+# icon = "shirt"
+# newtab = true
+
+
+
+[[social]]
+identifier = "github"
+name = "GitHub"
+url = "https://github.com/SummonHIM"
+[social.params]
+icon = "brand-github"
+
+[[social]]
+identifier = "telegram"
+name = "Telegram"
+url = "https://t.me/SummonHIM"
+[social.params]
+icon = "brand-telegram"
+
+[[social]]
+identifier = "bilibili"
+name = "BiliBili"
+url = "https://space.bilibili.com/21899295"
+[social.params]
+icon = "brand-bilibili"
+
+[[social]]
+identifier = "steam"
+name = "Steam"
+url = "https://steamcommunity.com/id/SummonHIM"
+[social.params]
+icon = "brand-steam"
+
+[[social]]
+identifier = "twitter"
+name = "Twitter"
+url = "https://twitter.com/SummonHIMs"
+[social.params]
+icon = "brand-twitter"

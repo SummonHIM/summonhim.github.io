@@ -1,0 +1,14 @@
+<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" stroke-linejoin="round" stroke-linecap="round" fill="none" stroke="#2c3e50" stroke-width="1.5" class="icon icon-tabler icon-tabler-device-tv">
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="615" width="1008" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <rect id="svg_2" rx="2" height="13" width="18" y="7" x="3"/>
+  <polyline id="svg_3" points="16 3 12 7 8 3"/>
+  <rect stroke="null" id="svg_4" height="2.5" width="0.0625" y="10.84082" x="8.343751" fill-opacity="null" stroke-opacity="null" stroke-width="null" fill="null"/>
+  <rect stroke="null" id="svg_5" height="2.5" width="0.0625" y="10.90332" x="15.468751" fill-opacity="null" stroke-opacity="null" stroke-width="null" fill="null"/>
+ </g>
+</svg>
