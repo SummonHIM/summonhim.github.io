@@ -1,5 +1,5 @@
 ---
-title: STM32 中使用 VSCode + clangd + Makefile/CMake 开发
+title: 超级简单的 STM32 + VSCode + clangd + Makefile/CMake 开发
 date: 2024-04-09
 categories: 技术杂谈
 ---
@@ -32,6 +32,9 @@ clangd 需要通过 compile_commands.json 来定位头文件，定义等内容�
 如果需要使用标准库，则需要为 clangd 添加一个参数，即为 `Clangd: Arguments`（`clangd.arguments`）添加 `--query-driver=X:/路径/到/你的/arm-none-eabi-gcc.exe` 即可正常读取标准库头文件。
 
 > 实际上使用 GNU Arm 编译工具的**标准库**头文件可能会出现一些问题。比如说 `printf` 无法正常打印之类的。具体原因不明。
+
+## 关于刷写
+编者暂时未能在 [Cortex-Debug: marus25.cortex-debug](https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug) 中找到最方便的刷写方案。欢迎自行研究
 
 ## 完成
 至此整个配置就已经完成了。如果想要使用 Makefile 编译，则前去左侧边栏进入 Makefike 选项卡，在选项卡顶部点击生成文件即可。如果想要使用 CMake 编译，则直接在底部状态栏或窗口右上角点击编译文件即可。
