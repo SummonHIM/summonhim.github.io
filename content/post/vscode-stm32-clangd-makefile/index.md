@@ -20,8 +20,8 @@ categories: 技术杂谈
 
 ### VSCode 插件
 - [clangd: llvm-vs-code-extensions.vscode-clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd)
-- [CMake Tools: ms-vscode.cmake-tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools)
 - [Makefile Tools: ms-vscode.makefile-tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.makefile-tools)
+- [CMake Tools: ms-vscode.cmake-tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools)
 
 > 格式：<名称>: <插件 ID>  
 > 安装 CMake Tools 时会自动安装 [twxs.Cmake](https://marketplace.visualstudio.com/items?itemName=twxs.cmake)。
@@ -31,10 +31,14 @@ clangd 需要通过 compile_commands.json 来定位头文件，定义等内容�
 
 如果需要使用标准库，则需要为 clangd 添加一个参数，即为 `Clangd: Arguments`（`clangd.arguments`）添加 `--query-driver=X:/路径/到/你的/arm-none-eabi-gcc.exe` 即可正常读取标准库头文件。
 
-> 实际上使用 GNU Arm 编译工具的**标准库**头文件可能会出现一些问题。比如说 `printf` 无法正常打印之类的。具体原因不明。
-
-## 关于刷写
-编者暂时未能在 [Cortex-Debug: marus25.cortex-debug](https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug) 中找到最方便的刷写方案。欢迎自行研究
-
 ## 完成
 至此整个配置就已经完成了。如果想要使用 Makefile 编译，则前去左侧边栏进入 Makefike 选项卡，在选项卡顶部点击生成文件即可。如果想要使用 CMake 编译，则直接在底部状态栏或窗口右上角点击编译文件即可。
+
+## 关于刷写
+目前最方便的刷写方案为使用 [ST-LINK Utility](https://www.st.com.cn/zh/development-tools/stsw-link004.html) 刷写。首先，File（文件）/Open file（打开文件）打开编译好的文件。然后单击电插头图标的 Connect to the target 按钮连接设备（某些设备需要按住重置按钮才能连接）。最后单击纸笔图标的 Program verify 即可将文件刷入进设备中。断开设备前不要忘记单击软件中的 Disconnect from the target 弹出设备。
+
+编者暂时未能在 [Cortex-Debug: marus25.cortex-debug](https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug) 中找到最方便的刷写方案。欢迎自行研究。
+
+## 一些可用到的文章或信息
+- [CSDN: stm32CudeMx printf重定向串口输出（使用Makefile方式）](https://blog.csdn.net/weixin_46253402/article/details/136288512)
+- printf 等无法打印浮点数：Makefile 中添加这一行：`LDFLAGS += -u _printf_float`
