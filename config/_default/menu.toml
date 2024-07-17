@@ -44,3 +44,10 @@ name = "Twitter"
 url = "https://twitter.com/SummonHIMs"
 [social.params]
 icon = "brand-twitter"
+
+[[social]]
+identifier = "email"
+name = "E-Mail"
+url = "mailto:me@summonhim.top"
+[social.params]
+icon = "mail"
