@@ -48,6 +48,6 @@ icon = "brand-twitter"
 [[social]]
 identifier = "email"
 name = "E-Mail"
-url = "mailto:me@summonhim.top"
+url = "mailto:summonhim@qq.com"
 [social.params]
 icon = "mail"
