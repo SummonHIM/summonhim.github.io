@@ -1,9 +1,9 @@
 # Configure main menu and social menu
 [[main]]
 identifier = "auth"
-name = "登录"
+name = "控制台"
 url = "https://auth.summonhim.top:8443/"
-weight = 100
+weight = 30
 [main.params]
 icon = "login-2"
 newtab = true
