@@ -1,12 +1,12 @@
 # Configure main menu and social menu
-# [[main]]
-# identifier = "skin"
-# name = "皮肤站"
-# url = "https://skin.summonhim.top/"
-# weight = 10
-# [main.params]
-# icon = "shirt"
-# newtab = true
+[[main]]
+identifier = "auth"
+name = "登录"
+url = "https://auth.summonhim.top:8443/"
+weight = 100
+[main.params]
+icon = "login-2"
+newtab = true
 
 
 
