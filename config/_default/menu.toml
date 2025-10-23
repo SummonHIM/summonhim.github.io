@@ -2,7 +2,7 @@
 [[main]]
 identifier = "auth"
 name = "控制台"
-url = "https://auth.summonhim.top:8443/"
+url = "https://auth.summonhim.top:2096/"
 weight = 30
 [main.params]
 icon = "login-2"
