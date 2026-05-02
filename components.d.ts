@@ -12,7 +12,6 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Button: typeof import('primevue/button')['default']
-    Dialog: typeof import('primevue/dialog')['default']
     GlobalFooter: typeof import('./src/components/GlobalFooter.vue')['default']
     GlobalSocial: typeof import('./src/components/GlobalSocial.vue')['default']
     Image: typeof import('primevue/image')['default']
