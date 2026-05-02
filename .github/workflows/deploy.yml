@@ -26,8 +26,8 @@ jobs:
       - name: Use Node.js LTS
         uses: actions/setup-node@v4
         with:
-          node-version: lts
-          cache: "yarn"
+          node-version: lts/*
+          cache: yarn
       - name: Install node modules
         run: yarn install --immutable
       - name: Test project
