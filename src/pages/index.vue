@@ -77,6 +77,10 @@ const socialLinks = [
     icon: 'ri--telegram-2-line',
   },
   {
+    href: 'https://github.com/summonhim',
+    icon: 'ri--github-line',
+  },
+  {
     href: 'https://space.bilibili.com/21899295',
     icon: 'ri--bilibili-line',
   },
