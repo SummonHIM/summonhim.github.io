@@ -12,11 +12,15 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Button: typeof import('primevue/button')['default']
+    Divider: typeof import('primevue/divider')['default']
     GlobalFooter: typeof import('./src/components/GlobalFooter.vue')['default']
     GlobalSocial: typeof import('./src/components/GlobalSocial.vue')['default']
+    GlobalToolbar: typeof import('./src/components/GlobalToolbar.vue')['default']
     Image: typeof import('primevue/image')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Toast: typeof import('primevue/toast')['default']
+    Toolbar: typeof import('primevue/toolbar')['default']
+    TrustItems: typeof import('./src/components/TrustItems.vue')['default']
   }
 }

@@ -5,6 +5,8 @@
       <a class="underline" href="https://github.com/SummonHIM/summonhim.github.io" target="_blank"
         >Source Code</a
       >
+      |
+      <RouterLink class="underline" to="/trust">Trust Chain</RouterLink>
     </p>
   </div>
 </template>
