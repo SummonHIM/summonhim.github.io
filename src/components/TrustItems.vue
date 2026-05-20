@@ -29,7 +29,7 @@
           <i class="pi pi-question-circle"></i>
         </a>
       </div>
-      <h4 class="text-sm">
+      <h4 class="text-sm font-mono">
         93BE 38C9 11A4 727F E39B<br />
         8447 A6C3 8E9E E548 F835
       </h4>
