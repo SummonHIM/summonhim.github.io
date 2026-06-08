@@ -13,6 +13,8 @@
 
       <h1 class="text-5xl">SummonHIM</h1>
 
+      <p class="text-lg font-medium">中国有句古话叫：“闷声发大财”。我一句话也不说，这是坠吼的。</p>
+
       <div>
         <GlobalSocial :links="socialLinks" />
       </div>
@@ -21,12 +23,13 @@
         <Button
           as="a"
           target="_blank"
-          href="https://misskey.summonhim.top/@summonhim"
+          href="https://mastodon.summonhim.top/@summonhim"
           label="动态"
           icon="pi pi-bolt"
           severity="info"
           size="large"
           raised
+          @click.prevent
         />
         <Button
           as="a"
@@ -79,6 +82,10 @@ const socialLinks = [
   {
     href: 'https://github.com/summonhim',
     icon: 'ri--github-line',
+  },
+  {
+    href: 'https://steamcommunity.com/id/summonhim/',
+    icon: 'ri--steam-line',
   },
   {
     href: 'https://space.bilibili.com/21899295',

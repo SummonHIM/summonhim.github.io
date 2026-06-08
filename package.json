@@ -19,7 +19,9 @@
   "dependencies": {
     "@primeuix/themes": "^2.0.3",
     "@tailwindcss/vite": "^4.2.4",
+    "dompurify": "^3.4.8",
     "js-md5": "^0.8.3",
+    "markdown-it": "^14.2.0",
     "pinia": "^3.0.4",
     "primeicons": "^7.0.0",
     "primevue": "^4.5.5",
@@ -30,8 +32,10 @@
   "devDependencies": {
     "@playwright/test": "^1.59.1",
     "@primevue/auto-import-resolver": "^4.5.5",
+    "@tailwindcss/typography": "^0.5.19",
     "@tsconfig/node24": "^24.0.4",
     "@types/js-md5": "^0.8.0",
+    "@types/markdown-it": "^14.1.2",
     "@types/node": "^24.12.2",
     "@vitejs/plugin-vue": "^6.0.6",
     "@vue/eslint-config-typescript": "^14.7.0",

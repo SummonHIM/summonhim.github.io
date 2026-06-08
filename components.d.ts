@@ -17,6 +17,7 @@ declare module 'vue' {
     GlobalSocial: typeof import('./src/components/GlobalSocial.vue')['default']
     GlobalToolbar: typeof import('./src/components/GlobalToolbar.vue')['default']
     Image: typeof import('primevue/image')['default']
+    MarkdownRender: typeof import('./src/components/MarkdownRender.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Toast: typeof import('primevue/toast')['default']
