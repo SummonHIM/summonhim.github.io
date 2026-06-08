@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center justify-center">
+  <div class="flex flex-col sm:flex-row items-center justify-center">
     <div class="flex flex-col items-center">
       <div class="flex items-start gap-1">
         <h3 class="text-2xl">根证书</h3>
@@ -21,7 +21,8 @@
         target="_blank"
       />
     </div>
-    <Divider layout="vertical" />
+    <Divider class="hidden! sm:flex!" layout="vertical" />
+    <Divider class="flex! sm:hidden!" />
     <div class="flex flex-col items-center">
       <div class="flex items-start gap-1">
         <h3 class="text-2xl">GnuPG</h3>

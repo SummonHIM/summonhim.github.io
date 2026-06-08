@@ -6,7 +6,7 @@
 
     <div class="flex-1 flex flex-col items-center justify-center">
       <span class="ri--shield-user-line title-icon"></span>
-      <h1 class="text-4xl mt-4">你真的信任我吗？</h1>
+      <h1 class="text-4xl mt-4 text-center">你真的信任我吗？</h1>
       <TrustItems class="mt-12" />
     </div>
 

@@ -3,7 +3,7 @@
     <GlobalToolbar class="mx-2 my-2" v-model="menuSelected" :buttons="menuItems" />
   </navbar>
 
-  <div class="container mx-auto">
+  <div class="mx-auto pt-8 pb-8 max-w-[90%] md:max-w-[85%] lg:max-w-[70%]">
     <MarkdownRender v-model="tosMarkdown" />
   </div>
 

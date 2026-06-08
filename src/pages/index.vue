@@ -11,9 +11,11 @@
         height="256"
       />
 
-      <h1 class="text-5xl">SummonHIM</h1>
+      <h1 class="text-5xl text-center">SummonHIM</h1>
 
-      <p class="text-lg font-medium">中国有句古话叫：“闷声发大财”。我一句话也不说，这是坠吼的。</p>
+      <p class="text-lg font-medium text-center">
+        中国有句古话叫：“闷声发大财”。我一句话也不说，这是坠吼的。
+      </p>
 
       <div>
         <GlobalSocial :links="socialLinks" />
