@@ -36,7 +36,7 @@
         <Button
           as="a"
           target="_blank"
-          href="https://auth.summonhim.top:2096/"
+          href="https://auth.summonhim.top:2053/"
           label="控制台"
           icon="pi pi-sign-in"
           severity="secondary"
