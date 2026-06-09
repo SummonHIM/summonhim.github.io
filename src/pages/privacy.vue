@@ -4,7 +4,7 @@
   </navbar>
 
   <div class="mx-auto pt-8 pb-8 max-w-[90%] md:max-w-[85%] lg:max-w-[70%]">
-    <MarkdownRender v-model="tosMarkdown" />
+    <MarkdownRender v-model="privacyMarkdown" />
   </div>
 
   <footer>
@@ -23,7 +23,7 @@ defineOptions({
   name: 'PrivacyPolicy',
 })
 
-const tosMarkdown = ref(privacyMarkdownRaw)
+const privacyMarkdown = ref(privacyMarkdownRaw)
 
 const menuItems: GlobalTabbarButtonProps[] = [
   {
