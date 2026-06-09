@@ -51,3 +51,8 @@ const menuSelected = ref<GlobalTabbarButtonProps>(
   height: 128px;
 }
 </style>
+
+<route lang="yaml">
+meta:
+  title: 信任链 - SummonHIM
+</route>

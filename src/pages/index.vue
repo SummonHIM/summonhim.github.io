@@ -95,3 +95,8 @@ const socialLinks = [
   },
 ]
 </script>
+
+<route lang="yaml">
+meta:
+  title: SummonHIM
+</route>

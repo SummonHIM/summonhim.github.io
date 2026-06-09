@@ -19,3 +19,8 @@ defineOptions({
   name: 'NotFoundPage',
 })
 </script>
+
+<route lang="yaml">
+meta:
+  title: 404 Not Found - SummonHIM
+</route>

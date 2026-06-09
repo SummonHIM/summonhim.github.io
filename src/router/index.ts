@@ -14,4 +14,12 @@ const router = createRouter({
   },
 })
 
+router.afterEach((to) => {
+  if (to.meta.title) {
+    document.title = to.meta.title as string
+  } else {
+    document.title = '默认标题' // 如果没有配置title，显示默认值
+  }
+})
+
 export default router

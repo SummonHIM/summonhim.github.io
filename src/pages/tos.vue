@@ -44,3 +44,8 @@ const menuSelected = ref<GlobalTabbarButtonProps>(
   menuItems.find((item) => item.id === 'back-hidden')!,
 )
 </script>
+
+<route lang="yaml">
+meta:
+  title: 服务条款 - SummonHIM
+</route>

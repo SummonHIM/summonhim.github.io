@@ -6,6 +6,7 @@ import Pages from 'vite-plugin-pages'
 import tailwindcss from '@tailwindcss/vite'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import Components from 'unplugin-vue-components/vite'
+import generateSitemap from 'vite-plugin-pages-sitemap'
 import { PrimeVueResolver } from '@primevue/auto-import-resolver'
 
 // https://vite.dev/config/
@@ -14,7 +15,10 @@ export default defineConfig({
     vue(),
     vueDevTools(),
     Components({ resolvers: [PrimeVueResolver()] }),
-    Pages(),
+    Pages({
+      onRoutesGenerated: (routes) =>
+        generateSitemap({ routes, hostname: 'https://www.summonhim.top/', changefreq: 'yearly' }),
+    }),
     tailwindcss(),
   ],
   resolve: {
