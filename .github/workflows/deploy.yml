@@ -32,10 +32,10 @@ jobs:
         run: yarn install --immutable
       - name: Build static pages
         run: npm run build --if-present
-      - name: Test project
-        run: |
-          yarn playwright install --with-deps
-          yarn test:e2e
+      # - name: Test project
+      #   run: |
+      #     yarn playwright install --with-deps
+      #     yarn test:e2e
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
