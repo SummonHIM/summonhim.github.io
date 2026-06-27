@@ -55,8 +55,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-import qqQRCode from '@/assets/images/qq.png'
-import wechatQRCode from '@/assets/images/wechat.png'
 import { getGravatarUrl } from '@/utils'
 
 defineOptions({
@@ -70,11 +68,11 @@ const socialLinks = [
     icon: 'ri--mail-line',
   },
   {
-    href: qqQRCode,
+    href: 'https://qm.qq.com/q/lYZ8auKT72',
     icon: 'ri--qq-line',
   },
   {
-    href: wechatQRCode,
+    href: 'https://ddqqb.d8j.cn/t2Fvzw',
     icon: 'ri--wechat-line',
   },
   {
