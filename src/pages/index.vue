@@ -25,13 +25,12 @@
         <Button
           as="a"
           target="_blank"
-          href="https://mastodon.summonhim.top/@summonhim"
+          href="https://mastodon.summonhim.top/@summonhim_app_services"
           label="动态"
           icon="pi pi-bolt"
           severity="info"
           size="large"
           raised
-          @click.prevent
         />
         <Button
           as="a"
