@@ -31,7 +31,7 @@ const menuItems: GlobalTabbarButtonProps[] = [
     label: '返回',
     icon: 'pi pi-arrow-left',
     hidden: false,
-    href: `/`,
+    command: () => window.history.back(),
   },
   {
     id: 'back-hidden',
