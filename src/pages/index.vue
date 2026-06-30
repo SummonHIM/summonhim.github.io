@@ -52,15 +52,13 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-
-import { getGravatarUrl } from '@/utils'
+import summonhimAvatar from '@/assets/images/SummonHIM.png'
 
 defineOptions({
   name: 'HomePage',
 })
 
-const summonhimAvatar = ref(getGravatarUrl('summonhim@summonhim.top'))
+// const summonhimAvatar = ref(getGravatarUrl('summonhim@summonhim.top'))
 const socialLinks = [
   {
     href: 'mailto:summonhim@summonhim.top',
