@@ -1,5 +1,5 @@
 {
-  "subject": "acct:webadmin@summonhim.top",
+  "subject": "acct:summonhim@summonhim.top",
   "links": [
     {
       "href": "https://auth.summonhim.top:2053/application/o/tailscale/",
