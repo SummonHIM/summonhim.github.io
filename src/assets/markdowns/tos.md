@@ -1,6 +1,6 @@
 ## 服务条款 (Terms of Service)
 
-**最后更新日期：2026年6月29日**
+**最后更新日期：2026年7月15日**
 
 欢迎访问和使用本站服务，访问地址为 www.summonhim.top。
 在注册账户或使用本站提供的任何服务前，请仔细阅读本《服务条款》。当您通过统一认证系统注册或登录时，即表示您已阅读、理解并同意接受本条款的全部内容；如您不同意，请立即停止使用本站服务。
@@ -61,4 +61,4 @@
 
 如您对本条款有任何疑问，或需要举报违规行为、请求技术支持，请通过以下方式联系管理员：
 
-- 邮箱 / 联系方式：[summonhim@summonhim.top](mailto:summonhim@summonhim.top)
+- 邮箱 / 联系方式：[webadmin@summonhim.top](mailto:webadmin@summonhim.top)

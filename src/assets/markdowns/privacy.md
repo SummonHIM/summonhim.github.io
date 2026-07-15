@@ -1,6 +1,6 @@
 ## 隐私政策 (Privacy Policy)
 
-**最后更新日期：2026年6月29日**
+**最后更新日期：2026年7月15日**
 
 本《隐私政策》旨在帮助您了解：当您访问 summonhim.top 并使用本站提供的各项服务时，我们会收集哪些信息、如何使用这些信息，以及我们会采取哪些措施保护您的隐私。
 
@@ -59,4 +59,4 @@
 
 如您对本《隐私政策》有任何疑问，或需要行使相关隐私权利，请联系管理员：
 
-- 联系邮箱：[summonhim@summonhim.top](mailto:summonhim@summonhim.top)
+- 联系邮箱：[webadmin@summonhim.top](mailto:webadmin@summonhim.top)
