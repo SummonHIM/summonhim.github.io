@@ -68,10 +68,6 @@ const socialLinks = [
     icon: 'ri--qq-line',
   },
   {
-    href: 'https://w1.v3z.cn/si4KiE',
-    icon: 'ri--wechat-line',
-  },
-  {
     href: 'https://t.me/SummonHIM',
     icon: 'ri--telegram-2-line',
   },
