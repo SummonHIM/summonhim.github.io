@@ -28,7 +28,6 @@
           href="https://mastodon.summonhim.top/@summonhim_app_services"
           label="动态"
           icon="pi pi-bolt"
-          severity="info"
           size="large"
           raised
         />
