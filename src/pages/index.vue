@@ -25,8 +25,8 @@
         <Button
           as="a"
           target="_blank"
-          href="https://mastodon.summonhim.top/@summonhim_app_services"
-          label="动态"
+          href="https://matrix.to/#/@summonhim:matrix.summonhim.top"
+          label="联系我"
           icon="pi pi-bolt"
           size="large"
           raised
