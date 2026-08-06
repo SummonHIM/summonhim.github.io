@@ -1,6 +1,6 @@
 <template>
   <Toast />
-  <main :data-theme="isDark ? 'dark' : 'light'">
+  <main>
     <Suspense>
       <RouterView />
     </Suspense>
@@ -8,7 +8,5 @@
 </template>
 
 <script setup lang="ts">
-import { usePreferredDark } from '@vueuse/core'
-// 自动监听系统主题，返回 boolean
-const isDark = usePreferredDark()
+import '@/useTheme'
 </script>

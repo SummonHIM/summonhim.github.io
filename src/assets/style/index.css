@@ -3,3 +3,27 @@
 
 @plugin "@tailwindcss/typography";
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@font-face {
+  font-family: 'LTFuzz';
+  src: url('../fonts/LTFuzz-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SmileySans';
+  src: url('../fonts/SmileySans-Oblique.ttf.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-fuzz: 'LTFuzz', 'SmileySans', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}

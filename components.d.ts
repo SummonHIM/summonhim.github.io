@@ -18,6 +18,8 @@ declare module 'vue' {
     GlobalToolbar: typeof import('./src/components/GlobalToolbar.vue')['default']
     Image: typeof import('primevue/image')['default']
     MarkdownRender: typeof import('./src/components/MarkdownRender.vue')['default']
+    Menubar: typeof import('primevue/menubar')['default']
+    MermaidDiagram: typeof import('./src/components/MermaidDiagram.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Toast: typeof import('primevue/toast')['default']

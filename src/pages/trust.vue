@@ -4,9 +4,12 @@
       <GlobalToolbar class="mx-2 my-2" v-model="menuSelected" :buttons="menuItems" />
     </navbar>
 
-    <div class="flex-1 flex flex-col items-center justify-center">
-      <span class="ri--shield-user-line title-icon"></span>
-      <h1 class="text-4xl mt-4 text-center">你真的信任我吗？</h1>
+    <div class="flex-1 flex flex-col items-center justify-center px-6 py-16">
+      <span class="ri--shield-user-line title-icon text-[var(--p-primary-color)]"></span>
+      <h1 class="mt-4 text-center font-fuzz text-4xl font-bold md:text-5xl">你真的信任我吗？</h1>
+      <p class="mt-3 max-w-md text-center text-sm opacity-70">
+        这些是我用来签名与加密的凭据，你可以自行下载并核验。
+      </p>
       <TrustItems class="mt-12" />
     </div>
 
