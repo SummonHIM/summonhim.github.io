@@ -14,15 +14,18 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 
 import '@/assets/style/icons.css'
 import tosMarkdownRaw from '@/assets/markdowns/tos.md?raw'
 import type { GlobalTabbarButtonProps } from '@/components/GlobalToolbar.vue'
+import { smartBack } from '@/utils'
 
 defineOptions({
   name: 'TermsOfService',
 })
 
+const router = useRouter()
 const tosMarkdown = ref(tosMarkdownRaw)
 
 const menuItems: GlobalTabbarButtonProps[] = [
@@ -31,7 +34,7 @@ const menuItems: GlobalTabbarButtonProps[] = [
     label: '返回',
     icon: 'pi pi-arrow-left',
     hidden: false,
-    command: () => window.history.back(),
+    command: () => smartBack(router),
   },
   {
     id: 'back-hidden',

@@ -13,11 +13,15 @@
     </template>
   </Menubar>
 
-  <section class="flex min-h-[70vh] flex-col items-start justify-center gap-1 px-6 text-left md:px-16 lg:px-24">
-    <h1 class="font-fuzz text-6xl font-bold text-[var(--p-primary-color)] sm:text-8xl">SummonHIM</h1>
+  <section
+    class="flex min-h-[70vh] flex-col items-start justify-center gap-1 px-6 text-left md:px-16 lg:px-24"
+  >
+    <h1 class="font-fuzz text-6xl font-bold text-[var(--p-primary-color)] sm:text-8xl">
+      SummonHIM
+    </h1>
     <div class="flex flex-col gap-3">
       <p class="text-base md:text-lg">
-        <span class="font-medium">Linux 基础设施工程师</span><br>
+        <span class="font-medium">Linux 基础设施工程师</span><br />
         构建安全、自动化、可自托管的系统。
       </p>
       <p class="max-w-2xl text-sm opacity-75 md:text-base">
@@ -36,8 +40,23 @@
         target="_blank"
       />
       <Button label="项目" icon="pi pi-code" outlined size="small" as="a" href="#projects" />
-      <Button label="基础设施" icon="pi pi-server" outlined size="small" as="a" href="#infrastructure" />
-      <Button label="控制台" icon="pi pi-gauge" outlined size="small" as="a" href="https://auth.summonhim.top:2053/" target="_blank" />
+      <Button
+        label="基础设施"
+        icon="pi pi-server"
+        outlined
+        size="small"
+        as="a"
+        href="#infrastructure"
+      />
+      <Button
+        label="控制台"
+        icon="pi pi-gauge"
+        outlined
+        size="small"
+        as="a"
+        href="https://auth.summonhim.top:2053/"
+        target="_blank"
+      />
     </div>
 
     <div class="mt-2 flex flex-wrap gap-2">
@@ -60,7 +79,8 @@
 
     <div class="mt-8 flex flex-col gap-2">
       <p class="text-sm opacity-75 md:text-base">
-        以 Authentik 为核心的自托管平台：统一身份与单点登录，配合 Caddy 反向代理和 Docker 编排，把每个服务收拢进同一套安全边界。
+        以 Authentik 为核心的自托管平台：统一身份与单点登录，配合 Caddy 反向代理和 Docker
+        编排，把每个服务收拢进同一套安全边界。
       </p>
     </div>
 
@@ -90,7 +110,11 @@
         class="group flex flex-col gap-3 rounded border border-black/10 p-5 transition-colors hover:border-[var(--p-primary-color)] dark:border-white/15 dark:hover:border-[var(--p-primary-color)]"
       >
         <div>
-          <h3 class="font-mono text-lg font-semibold transition-colors group-hover:text-[var(--p-primary-color)]">{{ project.name }}</h3>
+          <h3
+            class="font-mono text-lg font-semibold transition-colors group-hover:text-[var(--p-primary-color)]"
+          >
+            {{ project.name }}
+          </h3>
           <p class="text-xs opacity-60">{{ project.type }}</p>
         </div>
         <p class="text-sm opacity-80">{{ project.description }}</p>
@@ -151,7 +175,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed } from 'vue'
 import { useTheme } from '@/useTheme'
 
 defineOptions({
@@ -161,11 +185,7 @@ defineOptions({
 const { mode, toggle } = useTheme()
 
 const themeIcon = computed(() =>
-  mode.value === 'system'
-    ? 'pi pi-desktop'
-    : mode.value === 'dark'
-      ? 'pi pi-moon'
-      : 'pi pi-sun',
+  mode.value === 'system' ? 'pi pi-desktop' : mode.value === 'dark' ? 'pi pi-moon' : 'pi pi-sun',
 )
 
 const menuItems = computed(() => [
@@ -290,7 +310,8 @@ const projects = [
   {
     name: 'bobac-px4',
     type: '机器人 · 无人机',
-    description: '全国大学生机器人大赛项目：Bobac 单臂机器人协同 PX4 无人机，涵盖自主导航、视觉识别抓取与无人机投放。',
+    description:
+      '全国大学生机器人大赛项目：Bobac 单臂机器人协同 PX4 无人机，涵盖自主导航、视觉识别抓取与无人机投放。',
     tags: ['Python', 'ROS2', 'PX4', 'Isaac Sim'],
     href: 'https://github.com/SummonHIM/bobac-px4',
   },
@@ -306,7 +327,7 @@ const socialLinks = [
   {
     href: 'https://matrix.to/#/@summonhim:matrix.summonhim.top',
     icon: 'mdi--matrix',
-    label: 'Matrix'
+    label: 'Matrix',
   },
   {
     href: 'https://qm.qq.com/q/lYZ8auKT72',

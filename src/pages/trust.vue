@@ -23,10 +23,14 @@
 import '@/assets/style/icons.css'
 import type { GlobalTabbarButtonProps } from '@/components/GlobalToolbar.vue'
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import { smartBack } from '@/utils'
 
 defineOptions({
   name: 'TrustChain',
 })
+
+const router = useRouter()
 
 const menuItems: GlobalTabbarButtonProps[] = [
   {
@@ -34,7 +38,7 @@ const menuItems: GlobalTabbarButtonProps[] = [
     label: '返回',
     icon: 'pi pi-arrow-left',
     hidden: false,
-    href: `/`,
+    command: () => smartBack(router),
   },
   {
     id: 'back-hidden',

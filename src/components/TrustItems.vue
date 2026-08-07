@@ -31,7 +31,11 @@
     >
       <div class="flex items-center gap-1">
         <h3 class="font-fuzz text-xl font-bold">GnuPG</h3>
-        <a class="opacity-40 transition-opacity hover:opacity-100" href="https://www.gnupg.org" target="_blank">
+        <a
+          class="opacity-40 transition-opacity hover:opacity-100"
+          href="https://www.gnupg.org"
+          target="_blank"
+        >
           <i class="pi pi-question-circle text-sm"></i>
         </a>
       </div>
