@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import PrimeVue from 'primevue/config'
+import Tooltip from 'primevue/tooltip'
 import Aura from '@primeuix/themes/aura'
 import { definePreset } from '@primeuix/themes'
 
@@ -38,5 +39,7 @@ app.use(PrimeVue, {
   },
 })
 app.use(router)
+
+app.directive('tooltip', Tooltip)
 
 app.mount('#app')

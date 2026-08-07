@@ -13,6 +13,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     Button: typeof import('primevue/button')['default']
     Divider: typeof import('primevue/divider')['default']
+    FeatureCard: typeof import('./src/components/FeatureCard.vue')['default']
     GlobalFooter: typeof import('./src/components/GlobalFooter.vue')['default']
     GlobalSocial: typeof import('./src/components/GlobalSocial.vue')['default']
     GlobalToolbar: typeof import('./src/components/GlobalToolbar.vue')['default']
@@ -25,5 +26,8 @@ declare module 'vue' {
     Toast: typeof import('primevue/toast')['default']
     Toolbar: typeof import('primevue/toolbar')['default']
     TrustItems: typeof import('./src/components/TrustItems.vue')['default']
+  }
+  export interface GlobalDirectives {
+    Tooltip: typeof import('primevue/tooltip')['default']
   }
 }

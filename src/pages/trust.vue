@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen w-full flex flex-col items-center justify-center">
     <navbar class="w-full">
-      <GlobalToolbar class="mx-2 my-2" v-model="menuSelected" :buttons="menuItems" />
+      <GlobalToolbar class="my-2" v-model="menuSelected" :buttons="menuItems" />
     </navbar>
 
     <div class="flex-1 flex flex-col items-center justify-center px-6 py-16">

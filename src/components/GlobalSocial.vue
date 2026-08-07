@@ -3,9 +3,11 @@
     <Button
       v-for="link in links"
       :key="link.href"
+      v-tooltip.bottom="link.label"
       as="a"
       target="_blank"
       :href="link.href"
+      :aria-label="link.label"
       severity="secondary"
       variant="text"
     >
@@ -23,6 +25,6 @@
 import '@/assets/style/socials.css'
 
 defineProps<{
-  links?: { href: string; icon: string }[]
+  links?: { href: string; icon: string; label?: string }[]
 }>()
 </script>

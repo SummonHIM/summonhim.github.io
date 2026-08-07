@@ -1,7 +1,7 @@
 <template>
   <Toolbar
     :pt="{
-      root: '!bg-transparent !border-none !px-6 !py-4 md:!px-16 lg:!px-24',
+      root: '!bg-transparent !border-none !px-2 !py-4 md:!px-16 lg:!px-24',
     }"
   >
     <template #start>
