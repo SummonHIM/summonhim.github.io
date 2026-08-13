@@ -12,12 +12,10 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Button: typeof import('primevue/button')['default']
-    Divider: typeof import('primevue/divider')['default']
     FeatureCard: typeof import('./src/components/FeatureCard.vue')['default']
     GlobalFooter: typeof import('./src/components/GlobalFooter.vue')['default']
     GlobalSocial: typeof import('./src/components/GlobalSocial.vue')['default']
     GlobalToolbar: typeof import('./src/components/GlobalToolbar.vue')['default']
-    Image: typeof import('primevue/image')['default']
     MarkdownRender: typeof import('./src/components/MarkdownRender.vue')['default']
     Menubar: typeof import('primevue/menubar')['default']
     MermaidDiagram: typeof import('./src/components/MermaidDiagram.vue')['default']
