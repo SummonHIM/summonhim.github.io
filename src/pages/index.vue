@@ -171,7 +171,7 @@
       <span class="inline-block h-7 w-1.5 rounded-full bg-[var(--p-primary-color)]"></span>社交
     </h2>
     <p class="mt-4 max-w-xl text-sm opacity-75 md:text-base">
-      这里是我常出没的一些平台——无论是讨论技术方案、交流开源项目，还是单纯想聊几句，都欢迎随时找我。邮件和 Matrix 是最容易联系到我的方式。
+      这里是我常出没的一些平台——无论是讨论技术方案、交流开源项目，还是单纯想聊几句，都欢迎随时找我。
     </p>
     <GlobalSocial :links="socialLinks" class="mt-6 -ml-3 flex-wrap" />
   </section>
