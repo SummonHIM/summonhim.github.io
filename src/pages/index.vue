@@ -39,7 +39,6 @@
         href="https://github.com/summonhim"
         target="_blank"
       />
-      <Button label="项目" icon="pi pi-code" outlined size="small" as="a" href="#projects" />
       <Button
         label="基础设施"
         icon="pi pi-server"
@@ -48,15 +47,9 @@
         as="a"
         href="#infrastructure"
       />
-      <Button
-        label="控制台"
-        icon="pi pi-gauge"
-        outlined
-        size="small"
-        as="a"
-        href="https://auth.summonhim.top:2053/"
-        target="_blank"
-      />
+      <Button label="我的项目" icon="pi pi-code" outlined size="small" as="a" href="#projects" />
+      <Button label="技术栈" icon="pi pi-wrench" outlined size="small" as="a" href="#skills" />
+      <Button label="社交平台" icon="pi pi-comments" outlined size="small" as="a" href="#social" />
     </div>
 
     <div class="mt-2 flex flex-wrap gap-2">
@@ -81,13 +74,13 @@
       <p class="text-sm opacity-75 md:text-base">
         以 Authentik 为核心的自托管平台：统一身份与单点登录，配合 Caddy 反向代理和 Docker
         编排，把每个服务收拢进同一套安全边界。所有组件均通过 Docker Compose
-        声明式管理，做到一键部署、版本可追溯。新服务的接入只需添加一段配置，即可自动获得
-        TLS 证书与 SSO 保护。
+        声明式管理，做到一键部署、版本可追溯。新服务的接入只需添加一段配置，即可自动获得 TLS 证书与
+        SSO 保护。
       </p>
       <p class="text-sm opacity-75 md:text-base">
-        外部流量首先经过 Cloudflare 进行 DDoS 防护与 WAF
-        过滤，再由 Caddy 将请求分发到各个容器化服务。需要鉴权的应用会统一跳转至
-        Authentik 完成登录，支持 OIDC、SAML 以及多因素认证，用户只需一套凭据即可访问所有系统。整套架构的配置全部版本化管理，
+        外部流量首先经过 Cloudflare 进行 DDoS 防护与 WAF 过滤，再由 Caddy
+        将请求分发到各个容器化服务。需要鉴权的应用会统一跳转至 Authentik 完成登录，支持 OIDC、SAML
+        以及多因素认证，用户只需一套凭据即可访问所有系统。整套架构的配置全部版本化管理，
         可在新机器上快速还原，也便于在测试环境中完整复现生产拓扑。
       </p>
     </div>
@@ -105,7 +98,7 @@
 
   <section id="projects" class="px-6 py-16 md:px-16 lg:px-24">
     <h2 class="flex items-center gap-3 font-fuzz text-3xl font-bold md:text-4xl">
-      <span class="inline-block h-7 w-1.5 rounded-full bg-[var(--p-primary-color)]"></span>项目
+      <span class="inline-block h-7 w-1.5 rounded-full bg-[var(--p-primary-color)]"></span>我的项目
     </h2>
 
     <div class="mt-8 grid gap-4 sm:grid-cols-2">
@@ -168,7 +161,7 @@
 
   <section id="social" class="px-6 py-16 md:px-16 lg:px-24">
     <h2 class="flex items-center gap-3 font-fuzz text-3xl font-bold md:text-4xl">
-      <span class="inline-block h-7 w-1.5 rounded-full bg-[var(--p-primary-color)]"></span>社交
+      <span class="inline-block h-7 w-1.5 rounded-full bg-[var(--p-primary-color)]"></span>社交平台
     </h2>
     <p class="mt-4 max-w-xl text-sm opacity-75 md:text-base">
       这里是我常出没的一些平台——无论是讨论技术方案、交流开源项目，还是单纯想聊几句，都欢迎随时找我。
@@ -182,8 +175,9 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref, type Ref } from 'vue'
 import { useTheme } from '@/useTheme'
+import type { MenuItem } from 'primevue/menuitem'
 
 defineOptions({
   name: 'HomePage',
@@ -195,11 +189,17 @@ const themeIcon = computed(() =>
   mode.value === 'system' ? 'pi pi-desktop' : mode.value === 'dark' ? 'pi pi-moon' : 'pi pi-sun',
 )
 
-const menuItems = computed(() => [
+const menuItems: Ref<MenuItem[]> = ref([
   { label: '基础设施', url: '#infrastructure' },
-  { label: '项目', url: '#projects' },
+  { label: '我的项目', url: '#projects' },
   { label: '技术栈', url: '#skills' },
-  { label: '社交', url: '#social' },
+  { label: '社交平台', url: '#social' },
+  {
+    label: '控制台',
+    icon: 'pi pi-external-link',
+    url: 'https://auth.summonhim.top:2053/',
+    target: '_blank',
+  },
   { icon: themeIcon.value, command: () => toggle() },
 ])
 
@@ -224,13 +224,15 @@ const skillGroups = [
   {
     title: '基础设施',
     icon: 'pi pi-server',
-    description: '身份认证、反向代理与容器编排，构成自托管平台的核心底座，让每个服务都运行在统一的安全边界内。',
+    description:
+      '身份认证、反向代理与容器编排，构成自托管平台的核心底座，让每个服务都运行在统一的安全边界内。',
     items: ['Linux', 'Docker', 'Caddy', 'Authentik', 'OIDC'],
   },
   {
     title: '云原生',
     icon: 'pi pi-cloud',
-    description: '通过声明式配置管理集群与基础设施，结合边缘网络实现全球加速，让部署可复现、可回滚、可水平扩展。',
+    description:
+      '通过声明式配置管理集群与基础设施，结合边缘网络实现全球加速，让部署可复现、可回滚、可水平扩展。',
     items: ['Kubernetes', 'Terraform', 'Cloudflare'],
   },
   {
@@ -242,7 +244,8 @@ const skillGroups = [
   {
     title: '嵌入式 · 机器人',
     icon: 'pi pi-microchip',
-    description: '从 STM32 裸机驱动、传感器对接到 ROS2 自主导航与 PX4 无人机飞控，打通软硬件全链路。',
+    description:
+      '从 STM32 裸机驱动、传感器对接到 ROS2 自主导航与 PX4 无人机飞控，打通软硬件全链路。',
     items: ['C', 'STM32', 'ROS2', 'PX4'],
   },
 ]
