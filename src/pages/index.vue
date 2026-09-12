@@ -31,15 +31,6 @@
 
     <div class="mt-4 flex flex-wrap gap-3">
       <Button
-        label="GitHub"
-        icon="pi pi-github"
-        outlined
-        size="small"
-        as="a"
-        href="https://github.com/summonhim"
-        target="_blank"
-      />
-      <Button
         label="基础设施"
         icon="pi pi-server"
         outlined
