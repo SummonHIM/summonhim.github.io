@@ -1,17 +1,22 @@
 <template>
-  <Menubar
-    :model="menuItems"
-    breakpoint="768px"
-    :pt="{
-      root: '!bg-transparent !border-none !px-6 !py-4 md:!px-16 lg:!px-24',
-      button: 'ml-auto',
-      rootList: 'md:!ml-auto',
-    }"
-  >
-    <template #start>
-      <p class="font-fuzz text-xl md:text-2xl">SummonHIM</p>
-    </template>
-  </Menubar>
+  <div class="sticky top-0 z-50 backdrop-blur-md">
+    <Menubar
+      :model="menuItems"
+      breakpoint="960px"
+      :pt="{
+        root: '!bg-transparent !border-none !px-6 !py-3 md:!px-12 lg:!px-20 xl:!px-28',
+        button: 'ml-auto',
+        rootList: 'md:!ml-auto',
+        itemLabel: ({ context }) => ({
+          class: !context.item.label ? '!hidden' : '',
+        }),
+      }"
+    >
+      <template #start>
+        <p class="font-fuzz text-xl md:text-2xl">SummonHIM</p>
+      </template>
+    </Menubar>
+  </div>
 
   <section
     class="flex min-h-screen flex-col items-start justify-center gap-1 px-6 text-left md:px-16 lg:px-24"
@@ -41,6 +46,15 @@
       <Button label="我的项目" icon="pi pi-code" outlined size="small" as="a" href="#projects" />
       <Button label="技术栈" icon="pi pi-wrench" outlined size="small" as="a" href="#skills" />
       <Button label="社交平台" icon="pi pi-comments" outlined size="small" as="a" href="#social" />
+      <Button
+        label="控制台"
+        icon="pi pi-th-large"
+        outlined
+        size="small"
+        as="a"
+        href="https://auth.summonhim.top:2053/"
+        target="_blank"
+      />
     </div>
 
     <div class="mt-2 flex flex-wrap gap-2">
@@ -166,7 +180,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, type Ref } from 'vue'
+import { computed, type ComputedRef } from 'vue'
 import { useTheme } from '@/useTheme'
 import type { MenuItem } from 'primevue/menuitem'
 
@@ -180,18 +194,18 @@ const themeIcon = computed(() =>
   mode.value === 'system' ? 'pi pi-desktop' : mode.value === 'dark' ? 'pi pi-moon' : 'pi pi-sun',
 )
 
-const menuItems: Ref<MenuItem[]> = ref([
-  { label: '基础设施', url: '#infrastructure' },
-  { label: '我的项目', url: '#projects' },
-  { label: '技术栈', url: '#skills' },
-  { label: '社交平台', url: '#social' },
+const menuItems: ComputedRef<MenuItem[]> = computed(() => [
+  { label: '基础设施', icon: 'pi pi-server', url: '#infrastructure' },
+  { label: '我的项目', icon: 'pi pi-code', url: '#projects' },
+  { label: '技术栈', icon: 'pi pi-wrench', url: '#skills' },
+  { label: '社交平台', icon: 'pi pi-comments', url: '#social' },
   {
     label: '控制台',
-    icon: 'pi pi-external-link',
+    icon: 'pi pi-th-large',
     url: 'https://auth.summonhim.top:2053/',
     target: '_blank',
   },
-  { icon: themeIcon.value, command: () => toggle() },
+  { label: '', icon: themeIcon.value, command: () => toggle() },
 ])
 
 const techStack = [
