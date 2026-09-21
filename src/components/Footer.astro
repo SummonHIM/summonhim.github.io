@@ -89,9 +89,7 @@
 </style>
 
 <script>
-  const him = document.getElementById('him');
-  const tooltip = document.getElementById('him-tooltip');
-  him.addEventListener('click', () => {
-    tooltip.hidden = !tooltip.hidden;
-  });
+  import { initHimEasterEgg } from '../scripts/him';
+
+  initHimEasterEgg();
 </script>

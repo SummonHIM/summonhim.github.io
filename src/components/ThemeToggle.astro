@@ -52,13 +52,7 @@
 </style>
 
 <script>
-  const btn = document.getElementById('theme-toggle');
-  btn.addEventListener('click', () => {
-    const root = document.documentElement;
-    const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
-    root.dataset.theme = next;
-    try {
-      localStorage.setItem('theme', next);
-    } catch (e) {}
-  });
+  import { initThemeToggle } from '../scripts/theme';
+
+  initThemeToggle();
 </script>
