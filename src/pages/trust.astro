@@ -11,28 +11,54 @@ import Footer from '../components/Footer.astro'
       <h1>你真的信任我吗？</h1>
       <p class="lead">如果你愿意，可以在这里获取我的身份凭据，建立信任。</p>
       <div class="cards">
-        <a
-          class="card"
-          href="https://ca.summonhim.top/"
-          target="_blank"
-          rel="noopener"
-        >
-          <span class="card-title">根证书</span>
+        <div class="card">
+          <span class="card-title">
+            根证书
+            <a
+              class="help"
+              href="https://www.ssl.com/zh-CN/article/what-are-root-certificates-and-why-do-they-matter/"
+              target="_blank"
+              rel="noopener"
+              aria-label="什么是根证书"
+            >
+              ?
+            </a>
+          </span>
           <span class="card-desc">我的私有 CA，签发我的各类证书</span>
-          <span class="card-cta">前往 CA →</span>
-        </a>
-        <a
-          class="card"
-          href="https://keys.openpgp.org/search?q=93BE38C911A4727FE39B8447A6C38E9EE548F835"
-          target="_blank"
-          rel="noopener"
-        >
-          <span class="card-title">GPG 密钥</span>
+          <a
+            class="card-cta"
+            href="https://ca.summonhim.top/"
+            target="_blank"
+            rel="noopener"
+          >
+            前往 CA →
+          </a>
+        </div>
+        <div class="card">
+          <span class="card-title">
+            GPG 密钥
+            <a
+              class="help"
+              href="https://www.gnupg.org/"
+              target="_blank"
+              rel="noopener"
+              aria-label="什么是 GPG"
+            >
+              ?
+            </a>
+          </span>
           <span class="card-fp">
             93BE 38C9 11A4 727F E39B 8447 A6C3 8E9E E548 F835
           </span>
-          <span class="card-cta">前往密钥服务器 →</span>
-        </a>
+          <a
+            class="card-cta"
+            href="https://keys.openpgp.org/search?q=93BE38C911A4727FE39B8447A6C38E9EE548F835"
+            target="_blank"
+            rel="noopener"
+          >
+            前往密钥服务器 →
+          </a>
+        </div>
       </div>
     </section>
   </main>
@@ -85,8 +111,32 @@ import Footer from '../components/Footer.astro'
   }
 
   .card-title {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 0.4rem;
     font-size: 1.2rem;
     font-weight: 700;
+  }
+
+  .help {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.1em;
+    height: 1.1em;
+    margin-top: 0.1em;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--text-muted);
+    font-size: 0.7em;
+    font-weight: 700;
+    line-height: 1;
+    vertical-align: super;
+  }
+
+  .help:hover {
+    color: var(--text);
+    border-color: var(--accent);
   }
 
   .card-desc {
