@@ -13,6 +13,7 @@ export const links: Link[] = [
   {
     label: 'Matrix',
     value: '@summonhim:matrix.summonhim.top',
+    href: 'https://matrix.to/#/@summonhim:matrix.summonhim.top',
   },
   {
     label: 'QQ',
@@ -22,6 +23,7 @@ export const links: Link[] = [
   {
     label: 'Telegram',
     value: 'SummonHIM',
+    href: 'https://t.me/SummonHIM',
   },
   {
     label: 'GitHub',
@@ -31,6 +33,7 @@ export const links: Link[] = [
   {
     label: 'Steam',
     value: 'SummonHIM',
+    href: 'https://steamcommunity.com/id/SummonHIM',
   },
   {
     label: 'BiliBili',
