@@ -1,0 +1,76 @@
+---
+import { profile } from '../data/profile';
+import { links } from '../data/links';
+
+const social = links.filter((l) => l.href);
+---
+
+<section id="top" class="hero">
+  <div class="container">
+    <img class="logo" src="/logo.png" alt="SummonHIM 图标" width="96" height="96" />
+    <h1>{profile.name}</h1>
+    <p class="tagline">{profile.tagline}</p>
+    <blockquote class="quote">{profile.quote}</blockquote>
+    <div class="social">
+      {social.map((l) => (
+        <a href={l.href} target="_blank" rel="noopener">{l.label}</a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    text-align: center;
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+  }
+
+  .logo {
+    border-radius: 24px;
+    box-shadow: 0 8px 30px var(--accent-soft);
+  }
+
+  h1 {
+    font-size: 2.4rem;
+    margin: 1.5rem 0 0.5rem;
+  }
+
+  .tagline {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  .quote {
+    display: inline-block;
+    margin: 0 0 2rem;
+    padding: 0.5rem 1.25rem;
+    border-left: 3px solid var(--accent);
+    background: var(--accent-soft);
+    border-radius: 8px;
+    font-size: 0.95rem;
+  }
+
+  .social {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .social a {
+    padding: 0.35rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    transition: all 0.15s ease;
+  }
+
+  .social a:hover {
+    color: var(--text);
+    border-color: var(--accent);
+    background: var(--accent-soft);
+  }
+</style>
