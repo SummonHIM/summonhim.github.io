@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config'
 
 export default defineConfig({
-  site: 'https://summonhim.top',
+  site: 'https://www.summonhim.top',
   output: 'static',
 })
