@@ -1,22 +1,6 @@
 <footer class="footer">
   <div class="container">
-    <div class="copy">© {new Date().getFullYear()} Summon<span class="him-wrap">
-      <button id="him" class="him" type="button" aria-label="HIM">HIM</button>
-      <div id="him-tooltip" class="tooltip" role="tooltip" hidden>
-        <svg class="face" viewBox="0 0 8 8" width="64" height="64" shape-rendering="crispEdges" aria-hidden="true">
-          <rect x="0" y="0" width="8" height="8" fill="#c68e63" />
-          <rect x="0" y="0" width="8" height="1" fill="#4a2c0a" />
-          <rect x="0" y="1" width="2" height="1" fill="#4a2c0a" />
-          <rect x="6" y="1" width="2" height="1" fill="#4a2c0a" />
-          <rect x="0" y="2" width="1" height="1" fill="#4a2c0a" />
-          <rect x="7" y="2" width="1" height="1" fill="#4a2c0a" />
-          <rect x="3" y="3" width="1" height="2" fill="#ffffff" />
-          <rect x="5" y="3" width="1" height="2" fill="#ffffff" />
-          <rect x="2" y="6" width="4" height="1" fill="#6b4b2a" />
-        </svg>
-        <span class="name">Herobrine</span>
-      </div>
-    </span></div>
+    <div class="copy">© {new Date().getFullYear()} Summon<button id="him" class="him" type="button" aria-label="HIM">HIM</button></div>
   </div>
 </footer>
 
@@ -32,59 +16,13 @@
     font-size: 0.85rem;
   }
 
-  .him-wrap {
-    position: relative;
-    display: inline-block;
-  }
-
   .him {
     padding: 0;
     border: none;
     background: transparent;
     color: inherit;
     font: inherit;
-    cursor: pointer;
-  }
-
-  .tooltip {
-    position: absolute;
-    bottom: calc(100% + 14px);
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.9rem 1.1rem;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-    white-space: nowrap;
-  }
-
-  .tooltip::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    border: 8px solid transparent;
-    border-top-color: var(--card);
-    border-top-width: 9px;
-  }
-
-  .tooltip[hidden] {
-    display: none;
-  }
-
-  .face {
-    border-radius: 4px;
-  }
-
-  .name {
-    font-size: 0.8rem;
-    color: var(--text-muted);
+    cursor: default;
   }
 </style>
 

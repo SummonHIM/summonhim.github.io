@@ -1,12 +1,20 @@
 export function initHimEasterEgg(): void {
   const him = document.getElementById('him');
-  const tooltip = document.getElementById('him-tooltip');
 
-  if (!him || !tooltip) {
-    throw new Error('HIM easter egg elements not found');
+  if (!him) {
+    throw new Error('HIM easter egg element not found');
   }
 
+  const min = 7;
+  const max = 12;
+  const target = Math.floor(Math.random() * (max - min + 1)) + min;
+  let count = 0;
+
   him.addEventListener('click', () => {
-    tooltip.hidden = !tooltip.hidden;
+    count += 1;
+    if (count >= target) {
+      window.open('https://zh.wikipedia.org/wiki/Herobrine', '_blank', 'noopener');
+      count = 0;
+    }
   });
 }
