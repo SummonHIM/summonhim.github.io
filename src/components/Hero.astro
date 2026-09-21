@@ -1,19 +1,16 @@
 ---
 import { profile } from '../data/profile'
 import { links } from '../data/links'
+import Logo from './Logo.astro'
 
 const social = links.filter((l) => l.href)
 ---
 
 <section id="top" class="hero">
   <div class="container">
-    <img
-      class="logo"
-      src="/logo.png"
-      alt="SummonHIM 图标"
-      width="96"
-      height="96"
-    />
+    <div class="logo">
+      <Logo size={96} alt="SummonHIM 图标" />
+    </div>
     <h1>{profile.name}</h1>
     <p class="tagline">{profile.tagline}</p>
     <blockquote class="quote">{profile.quote}</blockquote>
@@ -35,8 +32,14 @@ const social = links.filter((l) => l.href)
   }
 
   .logo {
+    display: inline-block;
     border-radius: 24px;
     box-shadow: 0 8px 30px var(--accent-soft);
+  }
+
+  .logo :global(.logo-svg) {
+    display: block;
+    border-radius: 24px;
   }
 
   h1 {

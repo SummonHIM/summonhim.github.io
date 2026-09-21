@@ -1,0 +1,29 @@
+---
+interface Props {
+  size?: number
+  alt?: string
+}
+
+const { size = 96, alt = 'SummonHIM' } = Astro.props
+---
+
+<svg
+  class="logo-svg"
+  role="img"
+  aria-label={alt}
+  width={size}
+  height={size}
+  viewBox="0 0 270.93333 270.93333"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <circle cx="135.46666" cy="135.46666" r="130" fill="#ffb900"></circle>
+  <text
+    x="75.967659"
+    y="208.77795"
+    font-family="'LT Fuzz', system-ui, sans-serif"
+    font-size="180.622"
+    fill="#ffffff"
+  >
+    S
+  </text>
+</svg>

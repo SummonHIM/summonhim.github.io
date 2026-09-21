@@ -1,5 +1,6 @@
 ---
 import ThemeToggle from './ThemeToggle.astro'
+import Logo from './Logo.astro'
 import { authentikUrl } from '../data/links'
 
 const items = [
@@ -11,7 +12,7 @@ const items = [
 <header class="nav">
   <div class="container nav-inner">
     <a class="brand" href="#top">
-      <img src="/logo.png" alt="SummonHIM" width="28" height="28" />
+      <Logo size={28} alt="SummonHIM" />
       <span class="brand-text">SummonHIM</span>
     </a>
     <nav class="links">
@@ -52,10 +53,6 @@ const items = [
   .brand-text {
     font-family: var(--font-brand);
     font-weight: normal;
-  }
-
-  .brand img {
-    border-radius: 6px;
   }
 
   .links {
