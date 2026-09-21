@@ -1,0 +1,68 @@
+---
+import { links, authentikUrl } from '../data/links';
+---
+
+<section id="links" class="links">
+  <div class="container">
+    <h2 class="section-title">链接 / 联系</h2>
+    <ul class="link-list">
+      {links.map((l) => (
+        <li>
+          <span class="label">{l.label}</span>
+          {l.href ? (
+            <a href={l.href} target="_blank" rel="noopener">{l.value}</a>
+          ) : (
+            <span class="value">{l.value}</span>
+          )}
+        </li>
+      ))}
+    </ul>
+    <a class="authentik" href={authentikUrl} target="_blank" rel="noopener">统一账号登录 (Authentik)</a>
+  </div>
+</section>
+
+<style>
+  .link-list {
+    list-style: none;
+    margin: 0 0 2rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .link-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+  }
+
+  .label {
+    min-width: 5.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  .link-list a {
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .link-list .value {
+    color: var(--text);
+  }
+
+  .authentik {
+    display: inline-block;
+    padding: 0.6rem 1.25rem;
+    background: var(--accent);
+    color: #1a1a1a;
+    font-weight: 700;
+    border-radius: 10px;
+  }
+</style>
