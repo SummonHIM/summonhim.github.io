@@ -21,12 +21,11 @@ export const timeline: TimelineItem[] = [
   {
     title: 'PVE 虚拟化',
     description:
-      'OpenWrt 更新频繁出问题，改用 PVE 同时承载 OpenWrt 与 Debian；核显直通折腾许久（内核配置乌龙）。',
+      'OpenWrt 更新频繁出问题，改用 PVE 同时承载 OpenWrt 与 Debian。',
   },
   {
     title: 'Mumble 语音',
-    description:
-      'Discord 被墙后自建 Mumble 作为队友语音，沿用至今，打开了话匣子。',
+    description: 'Discord 被墙后自建 Mumble 作为队友语音，沿用至今。',
   },
   {
     title: 'Nextcloud',
@@ -53,7 +52,7 @@ export const timeline: TimelineItem[] = [
     description: '用香橙派 P3 给服务器做 IPMI 实时监控。',
   },
   {
-    title: 'OpnSense',
+    title: 'OPNSense',
     description:
       '本科 AI 专业系统学习计算机网络，快速上手企业级路由防火墙平台。',
   },

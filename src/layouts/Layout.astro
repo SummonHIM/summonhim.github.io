@@ -22,15 +22,22 @@ const { title = 'SummonHIM', description = 'SummonHIM 的个人主页' } =
     <script is:inline>
       ;(function () {
         try {
-          const stored = localStorage.getItem('theme')
+          const stored = localStorage.getItem('theme-mode')
+          const mode =
+            stored === 'light' || stored === 'dark' || stored === 'system'
+              ? stored
+              : 'system'
           const theme =
-            stored ||
-            (window.matchMedia('(prefers-color-scheme: dark)').matches
-              ? 'dark'
-              : 'light')
+            mode === 'system'
+              ? window.matchMedia('(prefers-color-scheme: dark)').matches
+                ? 'dark'
+                : 'light'
+              : mode
           document.documentElement.setAttribute('data-theme', theme)
+          document.documentElement.setAttribute('data-theme-mode', mode)
         } catch (e) {
           document.documentElement.setAttribute('data-theme', 'light')
+          document.documentElement.setAttribute('data-theme-mode', 'system')
         }
       })()
     </script>
