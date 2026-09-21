@@ -4,7 +4,7 @@ import { SITE } from '../consts'
 const robots = `User-agent: *
 Allow: /
 
-Sitemap: ${SITE}/sitemap-index.xml
+Sitemap: ${SITE}/sitemap.xml
 `
 
 export const GET: APIRoute = () => {
