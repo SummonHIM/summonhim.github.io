@@ -197,6 +197,30 @@ const items = [
       padding: 0.3rem 0.5rem;
     }
   }
+
+  @media (max-width: 400px) {
+    .nav-inner {
+      height: 52px;
+    }
+
+    .links,
+    .actions {
+      gap: 0.65rem;
+    }
+
+    .links a {
+      font-size: 0.85rem;
+    }
+
+    .links a[href^='http'] {
+      display: none;
+    }
+
+    .back,
+    .to-top {
+      padding: 0.25rem 0.4rem;
+    }
+  }
 </style>
 
 <script>
