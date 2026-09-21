@@ -1,0 +1,110 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Nav from '../components/Nav.astro'
+import Footer from '../components/Footer.astro'
+---
+
+<Layout title="信任链">
+  <Nav variant="legal" />
+  <main id="top" class="container">
+    <section class="trust">
+      <h1>你真的信任我吗？</h1>
+      <p class="lead">如果你愿意，可以在这里获取我的身份凭据，建立信任。</p>
+      <div class="cards">
+        <a
+          class="card"
+          href="https://ca.summonhim.top/"
+          target="_blank"
+          rel="noopener"
+        >
+          <span class="card-title">根证书</span>
+          <span class="card-desc">我的私有 CA，签发我的各类证书</span>
+          <span class="card-cta">前往 CA →</span>
+        </a>
+        <a
+          class="card"
+          href="https://keys.openpgp.org/search?q=93BE38C911A4727FE39B8447A6C38E9EE548F835"
+          target="_blank"
+          rel="noopener"
+        >
+          <span class="card-title">GPG 密钥</span>
+          <span class="card-fp">
+            93BE 38C9 11A4 727F E39B 8447 A6C3 8E9E E548 F835
+          </span>
+          <span class="card-cta">前往密钥服务器 →</span>
+        </a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .trust {
+    text-align: center;
+    padding-top: 4rem;
+  }
+
+  h1 {
+    font-size: 2.6rem;
+    margin: 0 0 1rem;
+  }
+
+  .lead {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin: 0 0 3rem;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1.75rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    text-align: left;
+    transition:
+      border-color 0.15s ease,
+      transform 0.15s ease;
+  }
+
+  .card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  .card-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+
+  .card-fp {
+    font-family: ui-monospace, 'Cascadia Code', 'Consolas', monospace;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    word-break: break-all;
+    line-height: 1.6;
+  }
+
+  .card-cta {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+</style>
