@@ -175,6 +175,15 @@ const items = [
     border-color: var(--accent);
   }
 
+  @media (hover: none) {
+    .links a:hover,
+    .back:hover,
+    .to-top:hover {
+      color: var(--text-muted);
+      border-color: var(--border);
+    }
+  }
+
   @media (max-width: 640px) {
     .brand-text {
       display: none;
