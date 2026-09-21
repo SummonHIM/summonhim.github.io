@@ -1,0 +1,67 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+
+const items = [
+  { href: '#about', label: '关于' },
+  { href: '#projects', label: '项目' },
+  { href: '#links', label: '链接' },
+];
+---
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#top">
+      <img src="/logo.png" alt="SummonHIM" width="28" height="28" />
+      <span>SummonHIM</span>
+    </a>
+    <nav class="links">
+      {items.map((i) => (
+        <a href={i.href}>{i.label}</a>
+      ))}
+      <ThemeToggle />
+    </nav>
+  </div>
+</header>
+
+<style>
+  .nav {
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    z-index: 10;
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+  }
+
+  .brand img {
+    border-radius: 6px;
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .links a {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+
+  .links a:hover {
+    color: var(--text);
+  }
+</style>
