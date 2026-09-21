@@ -53,7 +53,6 @@ export const timeline: TimelineItem[] = [
   },
   {
     title: 'OPNSense',
-    description:
-      '本科时系统性学习计算机网络，快速上手企业级路由防火墙平台。',
+    description: '本科时系统性学习计算机网络，快速上手企业级路由防火墙平台。',
   },
 ]
