@@ -1,9 +1,13 @@
 # SummonHIM 应用服务隐私政策
 
 **英文名称：SummonHIM Application Service**
+
 **生效日期：2026 年 9 月 21 日**
+
 **运营主体：个人运营的非商业性社区平台**
+
 **联系邮箱：[webadmin@summonhim.top](mailto:webadmin@summonhim.top)**
+
 **官方网站：https://www.summonhim.top/**
 
 ## 第一条　概述
