@@ -1,5 +1,14 @@
+@font-face {
+  font-family: 'LT Fuzz';
+  src: url('/fonts/LTFuzz-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   color-scheme: light;
+  --font-brand: 'LT Fuzz', system-ui, sans-serif;
   --bg: #ffffff;
   --text: #17171a;
   --text-muted: #6b7280;
