@@ -10,9 +10,9 @@ export const timeline: TimelineItem[] = [
       '为打游戏搭建 MC 服务器，第一次租阿里云、第一次接触 Linux；公网被 DDoS 后服务被取消。',
   },
   {
-    title: 'Clash / 软路由 OpenWrt',
+    title: '软路由 OpenWrt',
     description:
-      '查资料开始学 Clash，接触软路由；用 OpenWrt 让全网关设备一起走代理。',
+      '查资料开始学 OpenWrt，接触软路由；用 OpenWrt 让全网关设备一起走代理。',
   },
   {
     title: 'Jellyfin / MoviePilot / Docker',
@@ -29,11 +29,11 @@ export const timeline: TimelineItem[] = [
   },
   {
     title: 'Nextcloud',
-    description: '自建文件 / 通讯录 / 日历，脱离谷歌；SFTP 直连 L4D2 目录。',
+    description: '自建文件 / 通讯录 / 日历，脱离谷歌。',
   },
   {
     title: 'Matrix / Telegram',
-    description: '自建 Matrix，积累 docker compose 经验。',
+    description: '自建 Matrix，积累 Docker Compose 经验。',
   },
   {
     title: 'Authentik 统一账号',
@@ -54,6 +54,6 @@ export const timeline: TimelineItem[] = [
   {
     title: 'OPNSense',
     description:
-      '本科 AI 专业系统学习计算机网络，快速上手企业级路由防火墙平台。',
+      '本科时系统性学习计算机网络，快速上手企业级路由防火墙平台。',
   },
 ]

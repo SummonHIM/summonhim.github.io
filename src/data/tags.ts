@@ -4,7 +4,6 @@ export const tags: string[] = [
   'PVE',
   'OpenWrt',
   'OpnSense',
-  'Clash',
   'Nextcloud',
   'Jellyfin',
   'Mumble',
