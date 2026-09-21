@@ -1,0 +1,74 @@
+---
+import { timeline } from '../data/timeline';
+import { tags } from '../data/tags';
+---
+
+<section id="about" class="about">
+  <div class="container">
+    <h2 class="section-title">关于我</h2>
+    <ol class="timeline">
+      {timeline.map((item) => (
+        <li>
+          <h3>{item.title}</h3>
+          <p>{item.description}</p>
+        </li>
+      ))}
+    </ol>
+    <div class="tags">
+      {tags.map((t) => (
+        <span class="tag">{t}</span>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 1.25rem;
+    border-left: 2px solid var(--border);
+  }
+
+  .timeline li {
+    position: relative;
+    padding: 0 0 1.5rem 1.5rem;
+  }
+
+  .timeline li::before {
+    content: '';
+    position: absolute;
+    left: -1.55rem;
+    top: 0.35rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .timeline h3 {
+    margin: 0 0 0.25rem;
+    font-size: 1.05rem;
+  }
+
+  .timeline p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 2rem;
+  }
+
+  .tag {
+    padding: 0.25rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+</style>
