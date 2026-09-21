@@ -29,7 +29,7 @@ export const timeline: TimelineItem[] = [
     description: '自建文件 / 通讯录 / 日历，脱离谷歌；SFTP 直连 L4D2 目录。',
   },
   {
-    title: 'Matrix',
+    title: 'Matrix / Telegram',
     description: '自建 Matrix，积累 docker compose 经验。',
   },
   {

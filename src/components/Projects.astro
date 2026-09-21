@@ -19,7 +19,7 @@ import { projectGroups } from '../data/projects';
                 ))}
               </div>
               {p.url && (
-                <a class="card-link" href={p.url} target="_blank" rel="noopener">访问</a>
+                <a class="card-link" href={p.url} target="_blank" rel="noopener" aria-label={`访问 ${p.name}`}>访问</a>
               )}
             </article>
           ))}
