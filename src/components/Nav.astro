@@ -37,6 +37,10 @@ const items = [
     {variant === 'legal' && (
       <>
         <div class="brand">
+          <a class="brand" href="/">
+            <Logo size={28} alt="SummonHIM" />
+            <span class="brand-text">SummonHIM</span>
+          </a>
           <button id="back-btn" class="back" type="button">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -54,10 +58,6 @@ const items = [
             </svg>
             <span>返回</span>
           </button>
-          <a class="brand" href="/">
-            <Logo size={28} alt="SummonHIM" />
-            <span class="brand-text">SummonHIM</span>
-          </a>
         </div>
         <ThemeToggle />
       </>
