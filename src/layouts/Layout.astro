@@ -1,5 +1,7 @@
 ---
+import { SEO } from 'astro-seo'
 import '../styles/global.css'
+import { SITE } from '../consts'
 
 interface Props {
   title?: string
@@ -8,17 +10,64 @@ interface Props {
 
 const { title = 'SummonHIM', description = 'SummonHIM 的个人主页' } =
   Astro.props
+
+const isHome = title === 'SummonHIM'
+const titleTemplate = isHome ? undefined : '%s - SummonHIM'
+const pageTitle = isHome ? 'SummonHIM' : `${title} - SummonHIM`
+const ogImage = `${SITE}/favicon.png`
+const pageUrl = new URL(Astro.url.pathname, SITE).href
 ---
 
 <!doctype html>
 <html lang="zh-CN">
   <head>
-    <meta charset="UTF-8" />
+    <SEO
+      charset="UTF-8"
+      title={title}
+      titleTemplate={titleTemplate}
+      description={description}
+      canonical={pageUrl}
+      openGraph={{
+        basic: {
+          title: pageTitle,
+          type: 'website',
+          image: ogImage,
+          url: pageUrl,
+        },
+        optional: {
+          siteName: 'SummonHIM',
+          locale: 'zh_CN',
+          description,
+        },
+        image: {
+          alt: 'SummonHIM 图标',
+        },
+      }}
+      twitter={{
+        card: 'summary',
+        title: pageTitle,
+        description,
+        image: ogImage,
+      }}
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
-    <title>{title === 'SummonHIM' ? 'SummonHIM' : `${title} - SummonHIM`}</title>
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: 'SummonHIM',
+        url: SITE,
+        image: ogImage,
+        sameAs: [
+          'https://github.com/SummonHIM',
+          'https://steamcommunity.com/id/SummonHIM',
+          'https://space.bilibili.com/21899295',
+        ],
+      })}
+    ></script>
     <script is:inline>
       ;(function () {
         try {
