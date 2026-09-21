@@ -15,7 +15,7 @@ export const projectGroups: ProjectGroup[] = [
     title: '折腾 / 自建服务',
     items: [
       {
-        name: 'SubscribeManager (SubMan)',
+        name: 'SubscribeManager',
         description: '合租代理订阅管理平台，PHP → Flask → Django 迭代至今。',
         tech: ['Django'],
       },
