@@ -85,8 +85,12 @@ const items = [
     position: sticky;
     top: 0;
     background: var(--bg);
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid transparent;
     z-index: 10;
+  }
+
+  .nav.scrolled {
+    border-bottom: 1px solid var(--border);
   }
 
   .nav-inner {
@@ -174,8 +178,10 @@ const items = [
 
 <script>
   import { initBackButton } from '../scripts/back'
+  import { initNavBorder } from '../scripts/nav'
 
   if (document.getElementById('back-btn')) {
     initBackButton()
   }
+  initNavBorder()
 </script>
