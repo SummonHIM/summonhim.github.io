@@ -3,6 +3,12 @@ import ThemeToggle from './ThemeToggle.astro'
 import Logo from './Logo.astro'
 import { authentikUrl } from '../data/links'
 
+interface Props {
+  variant?: 'home' | 'legal'
+}
+
+const { variant = 'home' } = Astro.props
+
 const items = [
   { href: '#about', label: '关于' },
   { href: '#projects', label: '项目' },
@@ -11,19 +17,43 @@ const items = [
 
 <header class="nav">
   <div class="container nav-inner">
-    <a class="brand" href="#top">
+    <a class="brand" href="/">
       <Logo size={28} alt="SummonHIM" />
       <span class="brand-text">SummonHIM</span>
     </a>
-    <nav class="links">
-      {items.map((i) => (
-        <a href={i.href}>{i.label}</a>
-      ))}
-      <a href={authentikUrl} target="_blank" rel="noopener">
-        控制台
-      </a>
-      <ThemeToggle />
-    </nav>
+    {variant === 'home' && (
+      <nav class="links">
+        {items.map((i) => (
+          <a href={i.href}>{i.label}</a>
+        ))}
+        <a href={authentikUrl} target="_blank" rel="noopener">
+          控制台
+        </a>
+        <ThemeToggle />
+      </nav>
+    )}
+    {variant === 'legal' && (
+      <nav class="links">
+        <button id="back-btn" class="back" type="button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M19 12H5"></path>
+            <path d="M12 19l-7-7 7-7"></path>
+          </svg>
+          <span>返回</span>
+        </button>
+        <ThemeToggle />
+      </nav>
+    )}
   </div>
 </header>
 
@@ -69,4 +99,33 @@ const items = [
   .links a:hover {
     color: var(--text);
   }
+
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition:
+      color 0.15s ease,
+      border-color 0.15s ease;
+  }
+
+  .back:hover {
+    color: var(--text);
+    border-color: var(--accent);
+  }
 </style>
+
+<script>
+  import { initBackButton } from '../scripts/back'
+
+  if (document.getElementById('back-btn')) {
+    initBackButton()
+  }
+</script>
