@@ -15,7 +15,10 @@ function toUrl(path: string): string {
 }
 
 export const GET: APIRoute = () => {
-  const urls = Object.keys(pages).map(toUrl).sort()
+  const urls = Object.keys(pages)
+    .filter((path) => !path.endsWith('/404.astro'))
+    .map(toUrl)
+    .sort()
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls
     .map((url) => `<url><loc>${url}</loc></url>`)
