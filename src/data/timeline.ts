@@ -1,16 +1,18 @@
 export type TimelineItem = {
-  title: string;
-  description: string;
-};
+  title: string
+  description: string
+}
 
 export const timeline: TimelineItem[] = [
   {
     title: 'Minecraft 服务器 → Linux',
-    description: '为打游戏搭建 MC 服务器，第一次租阿里云、第一次接触 Linux；公网被 DDoS 后服务被取消。',
+    description:
+      '为打游戏搭建 MC 服务器，第一次租阿里云、第一次接触 Linux；公网被 DDoS 后服务被取消。',
   },
   {
     title: 'Clash / 软路由 OpenWrt',
-    description: '查资料开始学 Clash，接触软路由；用 OpenWrt 让全网关设备一起走代理。',
+    description:
+      '查资料开始学 Clash，接触软路由；用 OpenWrt 让全网关设备一起走代理。',
   },
   {
     title: 'Jellyfin / MoviePilot / Docker',
@@ -18,11 +20,13 @@ export const timeline: TimelineItem[] = [
   },
   {
     title: 'PVE 虚拟化',
-    description: 'OpenWrt 更新频繁出问题，改用 PVE 同时承载 OpenWrt 与 Debian；核显直通折腾许久（内核配置乌龙）。',
+    description:
+      'OpenWrt 更新频繁出问题，改用 PVE 同时承载 OpenWrt 与 Debian；核显直通折腾许久（内核配置乌龙）。',
   },
   {
     title: 'Mumble 语音',
-    description: 'Discord 被墙后自建 Mumble 作为队友语音，沿用至今，打开了话匣子。',
+    description:
+      'Discord 被墙后自建 Mumble 作为队友语音，沿用至今，打开了话匣子。',
   },
   {
     title: 'Nextcloud',
@@ -50,6 +54,7 @@ export const timeline: TimelineItem[] = [
   },
   {
     title: 'OpnSense',
-    description: '本科 AI 专业系统学习计算机网络，快速上手企业级路由防火墙平台。',
+    description:
+      '本科 AI 专业系统学习计算机网络，快速上手企业级路由防火墙平台。',
   },
-];
+]

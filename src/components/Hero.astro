@@ -1,19 +1,27 @@
 ---
-import { profile } from '../data/profile';
-import { links } from '../data/links';
+import { profile } from '../data/profile'
+import { links } from '../data/links'
 
-const social = links.filter((l) => l.href);
+const social = links.filter((l) => l.href)
 ---
 
 <section id="top" class="hero">
   <div class="container">
-    <img class="logo" src="/logo.png" alt="SummonHIM 图标" width="96" height="96" />
+    <img
+      class="logo"
+      src="/logo.png"
+      alt="SummonHIM 图标"
+      width="96"
+      height="96"
+    />
     <h1>{profile.name}</h1>
     <p class="tagline">{profile.tagline}</p>
     <blockquote class="quote">{profile.quote}</blockquote>
     <div class="social">
       {social.map((l) => (
-        <a href={l.href} target="_blank" rel="noopener">{l.label}</a>
+        <a href={l.href} target="_blank" rel="noopener">
+          {l.label}
+        </a>
       ))}
     </div>
   </div>

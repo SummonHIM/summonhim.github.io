@@ -18,4 +18,4 @@ export const tags: string[] = [
   'KVM',
   '网络',
   'Django',
-];
+]

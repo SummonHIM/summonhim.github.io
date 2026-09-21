@@ -1,14 +1,14 @@
 export type Project = {
-  name: string;
-  description: string;
-  tech: string[];
-  url?: string;
-};
+  name: string
+  description: string
+  tech: string[]
+  url?: string
+}
 
 export type ProjectGroup = {
-  title: string;
-  items: Project[];
-};
+  title: string
+  items: Project[]
+}
 
 export const projectGroups: ProjectGroup[] = [
   {
@@ -48,7 +48,8 @@ export const projectGroups: ProjectGroup[] = [
     items: [
       {
         name: 'Car',
-        description: '嵌入式期末作业 · STM32 智能小车（红外 / 超声波 / OLED 等外设）。',
+        description:
+          '嵌入式期末作业 · STM32 智能小车（红外 / 超声波 / OLED 等外设）。',
         tech: ['STM32', 'C'],
       },
       {
@@ -63,4 +64,4 @@ export const projectGroups: ProjectGroup[] = [
       },
     ],
   },
-];
+]

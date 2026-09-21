@@ -1,15 +1,13 @@
 ---
-import '../styles/global.css';
+import '../styles/global.css'
 
 interface Props {
-  title?: string;
-  description?: string;
+  title?: string
+  description?: string
 }
 
-const {
-  title = 'SummonHIM',
-  description = 'SummonHIM 的个人主页',
-} = Astro.props;
+const { title = 'SummonHIM', description = 'SummonHIM 的个人主页' } =
+  Astro.props
 ---
 
 <!doctype html>
@@ -22,19 +20,19 @@ const {
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <script is:inline>
-      (function () {
+      ;(function () {
         try {
-          const stored = localStorage.getItem('theme');
+          const stored = localStorage.getItem('theme')
           const theme =
             stored ||
             (window.matchMedia('(prefers-color-scheme: dark)').matches
               ? 'dark'
-              : 'light');
-          document.documentElement.setAttribute('data-theme', theme);
+              : 'light')
+          document.documentElement.setAttribute('data-theme', theme)
         } catch (e) {
-          document.documentElement.setAttribute('data-theme', 'light');
+          document.documentElement.setAttribute('data-theme', 'light')
         }
-      })();
+      })()
     </script>
   </head>
   <body>

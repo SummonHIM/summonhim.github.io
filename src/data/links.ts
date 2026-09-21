@@ -1,8 +1,8 @@
 export type Link = {
-  label: string;
-  value: string;
-  href?: string;
-};
+  label: string
+  value: string
+  href?: string
+}
 
 export const links: Link[] = [
   {
@@ -40,6 +40,6 @@ export const links: Link[] = [
     value: 'SummonHIM',
     href: 'https://space.bilibili.com/21899295',
   },
-];
+]
 
-export const authentikUrl = 'https://auth.summonhim.top:2053/';
+export const authentikUrl = 'https://auth.summonhim.top:2053/'

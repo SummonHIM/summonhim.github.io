@@ -1,11 +1,11 @@
 ---
-import ThemeToggle from './ThemeToggle.astro';
-import { authentikUrl } from '../data/links';
+import ThemeToggle from './ThemeToggle.astro'
+import { authentikUrl } from '../data/links'
 
 const items = [
   { href: '#about', label: '关于' },
   { href: '#projects', label: '项目' },
-];
+]
 ---
 
 <header class="nav">
@@ -18,7 +18,9 @@ const items = [
       {items.map((i) => (
         <a href={i.href}>{i.label}</a>
       ))}
-      <a href={authentikUrl} target="_blank" rel="noopener">控制台</a>
+      <a href={authentikUrl} target="_blank" rel="noopener">
+        控制台
+      </a>
       <ThemeToggle />
     </nav>
   </div>
