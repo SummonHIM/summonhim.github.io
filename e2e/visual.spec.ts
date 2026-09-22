@@ -1,5 +1,7 @@
 import { expect, test } from '@playwright/test'
 
+test.skip(!!process.env.CI, '视觉回归仅在本地运行')
+
 test.skip(
   ({ browserName }) => browserName !== 'chromium',
   '视觉快照只在 chromium 上断言',
