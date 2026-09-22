@@ -1,5 +1,7 @@
 export type BackDestination = 'home' | 'external'
 
+export type BackAction = 'home' | 'back'
+
 export function resolveBackDestination(
   referrer: string,
   origin: string,
@@ -14,6 +16,16 @@ export function resolveBackDestination(
   }
 }
 
+export function resolveBackAction(
+  destination: BackDestination,
+  historyLength: number,
+): BackAction {
+  if (destination === 'home') {
+    return 'home'
+  }
+  return historyLength > 1 ? 'back' : 'home'
+}
+
 export function initBackButton(): void {
   const btn = document.getElementById('back-btn')
 
@@ -26,7 +38,9 @@ export function initBackButton(): void {
       document.referrer,
       window.location.origin,
     )
-    if (destination === 'home') {
+    const action = resolveBackAction(destination, window.history.length)
+
+    if (action === 'home') {
       window.location.href = '/'
     } else {
       window.history.back()
