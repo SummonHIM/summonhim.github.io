@@ -36,14 +36,14 @@ jobs:
       - name: Run tests
         run: npm test
 
+      - name: Build
+        run: npm run build
+
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium firefox webkit
 
       - name: Run E2E tests
         run: npx playwright test
-
-      - name: Build
-        run: npm run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

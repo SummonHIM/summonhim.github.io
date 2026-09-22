@@ -21,11 +21,11 @@
 
 | Project | 引擎 | 设备 | 视口 |
 |---|---|---|---|
-| `chromium-desktop` | chromium | Desktop Chrome | 1280×800 |
+| `chromium-desktop` | chromium | Desktop Chrome | 1280×720 |
 | `chromium-mobile` | chromium | Pixel 5 | 393×851（`isMobile`） |
-| `firefox-desktop` | firefox | Desktop Firefox | 1280×800 |
+| `firefox-desktop` | firefox | Desktop Firefox | 1280×720 |
 | `firefox-mobile` | firefox | Pixel 5 | 393×851（`isMobile`） |
-| `webkit-desktop` | webkit | Desktop Safari | 1280×800 |
+| `webkit-desktop` | webkit | Desktop Safari | 1280×720 |
 | `webkit-mobile` | webkit | Pixel 5 | 393×851（`isMobile`） |
 
 - **视觉快照回归仅在 chromium 上跑**（`chromium-desktop` / `chromium-mobile`），避免 firefox/webkit 字体抗锯齿与默认渲染差异导致的误报。

@@ -16,9 +16,9 @@ const PAGES = [
 ]
 
 for (const { path, name } of PAGES) {
-  test(`${name} 页面快照`, async ({ page }, testInfo) => {
+  test(`${name} 页面快照`, async ({ page }) => {
     await page.goto(path)
-    await expect(page).toHaveScreenshot(`${name}-${testInfo.project.name}.png`, {
+    await expect(page).toHaveScreenshot(`${name}.png`, {
       fullPage: true,
       animations: 'disabled',
     })
