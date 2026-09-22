@@ -18,6 +18,28 @@ test('窄屏返回顶部按钮只显示图标', async ({ page }) => {
   await expect(page.locator('.back span')).toBeVisible()
 })
 
+test('信任链卡片在窄屏换行且无横向溢出', async ({ page }) => {
+  await page.goto('/trust')
+
+  const cards = page.locator('.card')
+  await expect(cards).toHaveCount(2)
+
+  const [first, second] = await cards.evaluateAll((els) =>
+    els.map((el) => {
+      const r = el.getBoundingClientRect()
+      return { x: r.x, y: r.y }
+    }),
+  )
+  expect(second.y).toBeGreaterThan(first.y)
+
+  const overflow = await page.evaluate(
+    () =>
+      document.documentElement.scrollWidth -
+      document.documentElement.clientWidth,
+  )
+  expect(overflow).toBeLessThanOrEqual(0)
+})
+
 test('触摸点击不残留 hover 高亮', async ({ page, browserName }) => {
   test.skip(browserName !== 'chromium', '触摸 hover 模拟仅在 chromium 可靠')
 
