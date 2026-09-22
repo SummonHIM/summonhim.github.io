@@ -75,6 +75,8 @@
 1. `npx playwright install --with-deps chromium firefox webkit`
 2. `npx playwright test`
 
+视觉截图回归仅在本地运行：`visual.spec.ts` 顶部用 `test.skip(!!process.env.CI, ...)` 在 CI 环境跳过，故 CI 只执行功能测试（交互 / 页面可见性 / 响应式，3 引擎）。
+
 ## 7. 已知取舍
 
-截图基线是平台相关的（本地 Windows vs CI Linux 字体渲染略有差异）。基线以 CI（Linux）为准；首次在本地生成一版供人工审阅，若 CI 因字体差异报快照不一致，则在 CI 跑一次 `--update-snapshots` 固定基线并提交。
+截图基线是平台绑定的（文件名含 `-win32` 平台后缀，且本地 Windows 与 CI Linux 字体渲染、CJK 字体差异大）。最终决策：**视觉回归仅本地**，CI 跳过视觉；功能测试在 CI 跨 3 引擎运行。本地运行 `npm run test:e2e` 时视觉回归生效。

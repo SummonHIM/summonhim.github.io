@@ -384,16 +384,25 @@ git commit -m "test: 添加桌面与手机视觉截图回归基线"
 
 ---
 
-### Task 6: CI 集成
+### Task 6: CI 集成（含视觉本地化守卫）
 
 **Files:**
 - Modify: `.github/workflows/deploy.yml`
+- Modify: `e2e/visual.spec.ts`（顶部新增 CI 跳过守卫）
 
 **Interfaces:**
 - Consumes: Task 1–5 的测试与配置。
-- Produces: 每次 push 到 main 时在 build job 中运行 E2E。
+- Produces: 每次 push 到 main 时在 build job 中运行 E2E（功能测试）；视觉回归仅本地。
 
-- [ ] **Step 1: 在 build job 的 `Run tests` 之后插入两步**
+- [ ] **Step 1: 在 visual.spec.ts 顶部新增 CI 跳过守卫**
+
+在 `e2e/visual.spec.ts` 的 `import` 之后、`test.skip(browserName !== 'chromium')` 之前插入：
+
+```ts
+test.skip(!!process.env.CI, '视觉回归仅在本地运行')
+```
+
+- [ ] **Step 2: 在 build job 的 `Run tests` 之后插入两步**
 
 ```yaml
       - name: Install Playwright browsers
@@ -405,14 +414,14 @@ git commit -m "test: 添加桌面与手机视觉截图回归基线"
 
 插入位置：`.github/workflows/deploy.yml` 中 `- name: Run tests` / `run: npm test` 之后、`- name: Build` 之前。
 
-- [ ] **Step 2: 本地校验 workflow 语法（可选）**
+- [ ] **Step 3: 本地校验**
 
-若已安装 `actionlint`：Run `actionlint .github/workflows/deploy.yml`；否则跳过。Expected: 无错误。
+Run: `npx playwright test e2e/visual.spec.ts --list`（确认配置仍加载）；本地非 CI 环境 `npx playwright test` 应仍包含视觉测试（不被跳过）。Expected: 无错误。
 
-- [ ] **Step 3: Commit**
+- [ ] **Step 4: Commit**
 
 ```bash
-git add .github/workflows/deploy.yml
+git add .github/workflows/deploy.yml e2e/visual.spec.ts
 git commit -m "ci: 在 deploy 流程中运行 Playwright E2E"
 ```
 
