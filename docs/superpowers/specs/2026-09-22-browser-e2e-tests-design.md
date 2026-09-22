@@ -15,15 +15,21 @@
 - **webServer**：`npm run build && npm run preview`，端口 4321，测试生产构建（含 `astro-compress` 输出），`reuseExistingServer: !process.env.CI`。
 - **现有 `npm test`（vitest）保持不变**。
 
-## 3. 浏览器 / 视口（两个 project）
+## 3. 浏览器 / 视口（project 矩阵）
 
-| Project | 设备 | 视口 | 说明 |
+功能测试（交互 / 页面可见性 / 响应式）在 3 个浏览器引擎 × 2 个视口共 6 个 project 上运行，抓取 `matchMedia`、`window.open`、`history.back` 等 API 的跨引擎兼容问题：
+
+| Project | 引擎 | 设备 | 视口 |
 |---|---|---|---|
-| `desktop-chrome` | Desktop Chrome | 1280×800 | 桌面 |
-| `mobile-chrome` | Pixel 5 | 393×851 | `isMobile: true`，支持触摸模拟 |
+| `chromium-desktop` | chromium | Desktop Chrome | 1280×800 |
+| `chromium-mobile` | chromium | Pixel 5 | 393×851（`isMobile`） |
+| `firefox-desktop` | firefox | Desktop Firefox | 1280×800 |
+| `firefox-mobile` | firefox | Pixel 5 | 393×851（`isMobile`） |
+| `webkit-desktop` | webkit | Desktop Safari | 1280×800 |
+| `webkit-mobile` | webkit | Pixel 5 | 393×851（`isMobile`） |
 
-- 视觉快照只跑 chromium，避免跨浏览器渲染差异。
-- 两个 project 都会执行全部 spec；`toHaveScreenshot` 按 project 名自动分目录存基线，互不冲突。
+- **视觉快照回归仅在 chromium 上跑**（`chromium-desktop` / `chromium-mobile`），避免 firefox/webkit 字体抗锯齿与默认渲染差异导致的误报。
+- `toHaveScreenshot` 按 project 名自动分目录存基线，互不冲突。
 - CI 重试 2 次。
 
 ## 4. 测试文件（4 个 spec）
@@ -54,7 +60,8 @@
 ### 4.4 `e2e/visual.spec.ts` — 视觉截图回归
 
 - 对 `/`、`/trust`、`/privacy`、`/tos`、`/404` 使用 `toHaveScreenshot` 快照断言。
-- desktop + mobile 各一套基线。
+- 仅在 chromium（desktop + mobile）上跑，各一套基线；firefox/webkit 不生成快照。
+- 用 `testMatch` 或 `grep`/`projects` 配置将 visual spec 限定到 chromium 两个 project。
 
 ## 5. 脚本
 
@@ -65,7 +72,7 @@
 ## 6. CI 集成
 
 在 `.github/workflows/deploy.yml` 的 build job 中，于 `npm test` 之后新增：
-1. `npx playwright install --with-deps chromium`
+1. `npx playwright install --with-deps chromium firefox webkit`
 2. `npx playwright test`
 
 ## 7. 已知取舍
