@@ -40,6 +40,10 @@ html {
 
 body {
   margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
   background: var(--bg);
   color: var(--text);
   font-family:
@@ -49,6 +53,10 @@ body {
     'Microsoft YaHei',
     sans-serif;
   line-height: 1.7;
+}
+
+main {
+  flex: 1;
 }
 
 a {

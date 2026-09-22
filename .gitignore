@@ -3,3 +3,4 @@ dist
 .astro
 test-results
 playwright-report
+e2e/visual.spec.ts-snapshots
