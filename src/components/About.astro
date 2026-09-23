@@ -1,17 +1,41 @@
 ---
-import { timeline } from '../data/timeline'
+import { timeline, type TimelineItem } from '../data/timeline'
 import { tags } from '../data/tags'
+
+type Group = { date: string; items: TimelineItem[] }
+
+const groups = timeline.reduce<Group[]>((acc, item) => {
+  const last = acc[acc.length - 1]
+  if (last && last.date === item.date) {
+    last.items.push(item)
+  } else {
+    acc.push({ date: item.date, items: [item] })
+  }
+  return acc
+}, [])
 ---
 
 <section id="about" class="about">
   <div class="container">
     <h2 class="section-title">关于我</h2>
     <ol class="timeline">
-      {timeline.map((item) => (
-        <li>
-          <h3>{item.title}</h3>
-          <p>{item.description}</p>
-        </li>
+      {groups.map((group) => (
+        <>
+          <li
+            class:list={{
+              date: true,
+              'is-hidden': group.items.every((i) => i.hidden),
+            }}
+          >
+            {group.date}
+          </li>
+          {group.items.map((item) => (
+            <li class:list={{ 'is-hidden': item.hidden }}>
+              <h3>{item.title}</h3>
+              <p data-unhide={item.unhide_description}>{item.description}</p>
+            </li>
+          ))}
+        </>
       ))}
     </ol>
     <div class="tags">
@@ -33,6 +57,34 @@ import { tags } from '../data/tags'
   .timeline li {
     position: relative;
     padding: 0 0 1.5rem 1.5rem;
+  }
+
+  .timeline li.is-hidden {
+    display: none;
+  }
+
+  .timeline li.date {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: fit-content;
+    margin: 0 0 0.5rem 1.5rem;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+  }
+
+  .timeline li.date::before {
+    display: none;
+  }
+
+  .timeline li.date.is-hidden {
+    display: none;
   }
 
   .timeline li::before {
