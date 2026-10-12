@@ -1,0 +1,276 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Nav from '../components/Nav.astro'
+import Footer from '../components/Footer.astro'
+import { resume } from '../data/resume'
+---
+
+<Layout
+  title="简历"
+  description="SummonHIM 的简历：运维/DevOps、后端与全栈开发技能与项目经历。"
+>
+  <Nav variant="home" />
+  <main id="top" class="container">
+    <section class="resume">
+      <header class="resume-header">
+        <h1>{resume.name}</h1>
+        <p class="resume-title">{resume.title}</p>
+        <ul class="resume-contacts">
+          {resume.contacts.map((c) => (
+            <li>
+              <a href={c.href} target="_blank" rel="noopener">
+                {c.label}: {c.value}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </header>
+
+      <div class="resume-summary">
+        <p>{resume.summary}</p>
+      </div>
+
+      <h2 class="section-title">技术技能</h2>
+      <div class="resume-skills">
+        {resume.skills.map((g) => (
+          <div class="skill-group">
+            <h3 class="skill-category">{g.category}</h3>
+            <div class="skill-tags">
+              {g.items.map((item) => (
+                <span class="tag">{item}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="section-title">教育经历</h2>
+      <div class="resume-education">
+        {resume.education.map((e) => (
+          <article class="card edu-card">
+            <h3>{e.degree}</h3>
+            <p class="edu-period">{e.period}</p>
+          </article>
+        ))}
+      </div>
+
+      <h2 class="section-title">项目经历</h2>
+      <div class="resume-projects">
+        {resume.projects.map((p) => (
+          <article class="card">
+            <h3>{p.name}</h3>
+            <p class="desc">{p.description}</p>
+            <div class="tech">
+              {p.tech.map((t) => (
+                <span class="tech-tag">{t}</span>
+              ))}
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <h2 class="section-title">自我评价</h2>
+      <ul class="resume-evaluation">
+        {resume.evaluation.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+
+      <div class="resume-actions">
+        <!-- TODO: 待完整简历 PDF 完成后，取消 disabled 并填入 href 指向 PDF -->
+        <button id="download-pdf" type="button" disabled>
+          下载简历 PDF（即将上线）
+        </button>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .resume {
+    padding-top: 4rem;
+  }
+
+  .resume-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .resume-header h1 {
+    font-family: var(--font-brand);
+    font-weight: normal;
+    font-size: 2.4rem;
+    margin: 0 0 0.5rem;
+  }
+
+  .resume-title {
+    color: var(--accent);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 1rem;
+  }
+
+  .resume-contacts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .resume-contacts a {
+    padding: 0.35rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    transition: all 0.15s ease;
+  }
+
+  .resume-contacts a:hover {
+    color: var(--text);
+    border-color: var(--accent);
+    background: var(--accent-soft);
+  }
+
+  .resume-summary {
+    margin: 0 0 2rem;
+  }
+
+  .resume-summary p {
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.8;
+  }
+
+  .resume-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .skill-category {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin: 0 0 0.5rem;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tag {
+    padding: 0.25rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .resume-education {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .resume-projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .card h3 {
+    margin: 0;
+    font-size: 1.05rem;
+  }
+
+  .desc {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    flex: 1;
+  }
+
+  .edu-period {
+    margin: 0;
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .tech-tag {
+    padding: 0.1rem 0.6rem;
+    border-radius: 6px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .resume-evaluation {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .resume-evaluation li {
+    position: relative;
+    padding-left: 1.5rem;
+    color: var(--text-muted);
+  }
+
+  .resume-evaluation li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .resume-actions {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2rem;
+  }
+
+  #download-pdf {
+    padding: 0.6rem 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    cursor: not-allowed;
+  }
+</style>
