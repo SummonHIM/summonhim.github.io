@@ -32,3 +32,14 @@ test('未知路由渲染 404 页', async ({ page }) => {
   await expect(page.locator('.code')).toHaveText('404')
   await expect(page.locator('.home')).toBeVisible()
 })
+
+test('简历页渲染关键区块', async ({ page }) => {
+  await page.goto('/4hr')
+  await expect(page.locator('.resume-header h1')).toHaveText('SummonHIM')
+  await expect(page.locator('.resume-title')).toBeVisible()
+  await expect(page.locator('.resume-skills')).toBeVisible()
+  await expect(page.locator('.resume-education')).toBeVisible()
+  await expect(page.locator('.resume-projects')).toBeVisible()
+  await expect(page.locator('.resume-evaluation')).toBeVisible()
+  await expect(page.locator('#download-pdf')).toBeDisabled()
+})
