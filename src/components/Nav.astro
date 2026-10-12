@@ -4,7 +4,7 @@ import Logo from './Logo.astro'
 import { authentikUrl } from '../data/links'
 
 interface Props {
-  variant?: 'home' | 'legal'
+  variant?: 'home' | 'page'
 }
 
 const { variant = 'home' } = Astro.props
@@ -35,7 +35,7 @@ const items = [
         </nav>
       </>
     )}
-    {variant === 'legal' && (
+    {variant === 'page' && (
       <>
         <div class="brand">
           <button id="back-btn" class="back" type="button">
