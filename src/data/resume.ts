@@ -56,7 +56,16 @@ export const resume: Resume = {
   skills: [
     {
       category: '编程语言',
-      items: ['Python', 'Go', 'TypeScript/JavaScript', 'C', 'C#', 'PHP', 'Bash', 'PowerShell'],
+      items: [
+        'Python',
+        'Go',
+        'TypeScript/JavaScript',
+        'C',
+        'C#',
+        'PHP',
+        'Bash',
+        'PowerShell',
+      ],
     },
     {
       category: '后端框架',
@@ -64,7 +73,15 @@ export const resume: Resume = {
     },
     {
       category: '前端框架',
-      items: ['Vue 3', 'React / Next.js', 'Vite', 'PrimeVue', 'Vuetify', 'Tailwind CSS', 'Electron'],
+      items: [
+        'Vue 3',
+        'React / Next.js',
+        'Vite',
+        'PrimeVue',
+        'Vuetify',
+        'Tailwind CSS',
+        'Electron',
+      ],
     },
     {
       category: '数据库',
@@ -72,7 +89,15 @@ export const resume: Resume = {
     },
     {
       category: '运维/DevOps',
-      items: ['Docker', 'Linux 服务器管理', 'Caddy/Nginx', 'OPNsense', 'Headscale', 'Grafana', 'n8n'],
+      items: [
+        'Docker',
+        'Linux 服务器管理',
+        'Caddy/Nginx',
+        'OPNsense',
+        'Headscale',
+        'Grafana',
+        'n8n',
+      ],
     },
     {
       category: '嵌入式',
