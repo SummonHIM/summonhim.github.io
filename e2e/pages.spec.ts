@@ -34,7 +34,7 @@ test('未知路由渲染 404 页', async ({ page }) => {
 })
 
 test('简历页渲染关键区块', async ({ page }) => {
-  await page.goto('/4hr')
+  await page.goto('/resume')
   await expect(page.locator('.resume-header h1')).toHaveText('SummonHIM')
   await expect(page.locator('.resume-title')).toBeVisible()
   await expect(page.locator('.resume-skills')).toBeVisible()
