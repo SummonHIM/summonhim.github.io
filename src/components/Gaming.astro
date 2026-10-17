@@ -1,0 +1,65 @@
+---
+import { gamingIntro, gamingChannels } from '../data/gaming'
+---
+
+<section id="gaming" class="gaming">
+  <div class="container">
+    <h2 class="section-title">一起打游戏</h2>
+    <p class="intro">{gamingIntro}</p>
+    <div class="grid">
+      {gamingChannels.map((c) => (
+        <a class="card" href={c.url} target="_blank" rel="noopener">
+          <h3>{c.name}</h3>
+          <p class="desc">{c.description}</p>
+          <span class="link">加入</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .intro {
+    margin: 0 0 1.5rem;
+    color: var(--text-muted);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.25rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: border-color 0.15s ease;
+  }
+
+  .card:hover {
+    border-color: var(--accent);
+  }
+
+  .card h3 {
+    margin: 0;
+    font-size: 1.05rem;
+  }
+
+  .desc {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    flex: 1;
+  }
+
+  .link {
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+</style>
