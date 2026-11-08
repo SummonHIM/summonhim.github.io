@@ -13,7 +13,7 @@
     </nav>
     <div
       class="copy"
-      set:html={`© ${new Date().getFullYear()} <span id="summon">Summon</span><span id="him">HIM</span>`}
+      set:html={`© ${new Date().getFullYear()} <span>Summon</span><span id="him">HIM</span>`}
     />
   </div>
 </footer>
@@ -57,8 +57,6 @@
 
 <script>
   import { initHimEasterEgg } from '../scripts/him'
-  import { initTimelineEasterEgg } from '../scripts/timeline'
 
   initHimEasterEgg()
-  initTimelineEasterEgg()
 </script>

@@ -1,43 +1,31 @@
 ---
-import { timeline, type TimelineItem } from '../data/timeline'
+import { aboutIntro, serviceGroups } from '../data/about'
 import { tags } from '../data/tags'
-
-type Group = { date: string; items: TimelineItem[] }
-
-const groups = timeline.reduce<Group[]>((acc, item) => {
-  const last = acc[acc.length - 1]
-  if (last && last.date === item.date) {
-    last.items.push(item)
-  } else {
-    acc.push({ date: item.date, items: [item] })
-  }
-  return acc
-}, [])
 ---
 
 <section id="about" class="about">
   <div class="container">
     <h2 class="section-title">关于我</h2>
-    <ol class="timeline">
-      {groups.map((group) => (
-        <>
-          <li
-            class:list={{
-              date: true,
-              'is-hidden': group.items.every((i) => i.hidden),
-            }}
-          >
-            {group.date}
-          </li>
-          {group.items.map((item) => (
-            <li class:list={{ 'is-hidden': item.hidden }}>
-              <h3>{item.title}</h3>
-              <p data-unhide={item.unhide_description}>{item.description}</p>
-            </li>
-          ))}
-        </>
+    <div class="intro">
+      {aboutIntro.map((p) => (
+        <p>{p}</p>
       ))}
-    </ol>
+    </div>
+    <div class="stack">
+      {serviceGroups.map((group) => (
+        <div class="stack-group">
+          <h3>{group.title}</h3>
+          <ul>
+            {group.items.map((item) => (
+              <li>
+                <span class="svc">{item.name}</span>
+                <span class="note">{item.note}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
     <div class="tags">
       {tags.map((t) => (
         <span class="tag">{t}</span>
@@ -47,66 +35,58 @@ const groups = timeline.reduce<Group[]>((acc, item) => {
 </section>
 
 <style>
-  .timeline {
-    list-style: none;
-    margin: 0;
-    padding: 0 0 0 1.25rem;
-    border-left: 2px solid var(--border);
+  .intro {
+    margin-bottom: 2rem;
   }
 
-  .timeline li {
-    position: relative;
-    padding: 0 0 1.5rem 1.5rem;
+  .intro p {
+    margin: 0 0 0.75rem;
+    color: var(--text-muted);
+    text-wrap: balance;
   }
 
-  .timeline li.is-hidden {
-    display: none;
+  .stack {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
   }
 
-  .timeline li.date {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    width: fit-content;
-    margin: 0 0 0.5rem 1.5rem;
-    padding: 0.35rem 0.9rem;
+  .stack-group {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+  }
+
+  .stack-group h3 {
+    margin: 0 0 0.75rem;
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.08em;
     color: var(--accent);
-    background: var(--accent-soft);
-    border: 1px solid var(--accent);
-    border-radius: 999px;
   }
 
-  .timeline li.date::before {
-    display: none;
-  }
-
-  .timeline li.date.is-hidden {
-    display: none;
-  }
-
-  .timeline li::before {
-    content: '';
-    position: absolute;
-    left: -1.55rem;
-    top: 0.35rem;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--accent);
-  }
-
-  .timeline h3 {
-    margin: 0 0 0.25rem;
-    font-size: 1.05rem;
-  }
-
-  .timeline p {
+  .stack-group ul {
+    list-style: none;
     margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .stack-group li {
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .svc {
+    font-weight: 600;
+    margin-right: 0.4rem;
+  }
+
+  .note {
     color: var(--text-muted);
-    font-size: 0.95rem;
   }
 
   .tags {
@@ -122,5 +102,11 @@ const groups = timeline.reduce<Group[]>((acc, item) => {
     border-radius: 999px;
     font-size: 0.85rem;
     color: var(--text-muted);
+  }
+
+  @media (max-width: 640px) {
+    .stack {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
