@@ -79,12 +79,6 @@ export const projectGroups: ProjectGroup[] = [
         url: 'https://github.com/SummonHIM/Bestdori-Music-Downloader',
       },
       {
-        name: 'my-config.nvim',
-        description: '个人 Neovim 配置。',
-        tech: ['Lua'],
-        url: 'https://github.com/SummonHIM/my-config.nvim',
-      },
-      {
         name: 'auto-pingan',
         description: '自动化平安好伙伴分析器。',
         tech: ['Python', 'OCR'],
