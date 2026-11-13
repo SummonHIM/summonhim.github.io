@@ -10,7 +10,7 @@ import { resume } from '../data/resume'
   description="SummonHIM 的简历：运维/DevOps、后端与全栈开发技能与项目经历。"
 >
   <Nav variant="page" />
-  <main id="top" class="container">
+  <main id="main" class="container">
     <section class="resume">
       <header class="resume-header">
         <h1>{resume.name}</h1>
@@ -105,7 +105,7 @@ import { resume } from '../data/resume'
   }
 
   .resume-title {
-    color: var(--accent);
+    color: var(--accent-text);
     font-size: 1.1rem;
     font-weight: 600;
     margin: 0 0 1rem;
@@ -212,7 +212,7 @@ import { resume } from '../data/resume'
 
   .edu-period {
     margin: 0;
-    color: var(--accent);
+    color: var(--accent-text);
     font-size: 0.85rem;
     font-weight: 600;
   }
@@ -227,7 +227,7 @@ import { resume } from '../data/resume'
     padding: 0.1rem 0.6rem;
     border-radius: 6px;
     background: var(--accent-soft);
-    color: var(--accent);
+    color: var(--accent-text);
     font-size: 0.8rem;
     font-weight: 600;
   }

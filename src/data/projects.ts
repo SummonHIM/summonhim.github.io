@@ -3,6 +3,8 @@ export type Project = {
   description: string
   tech: string[]
   url?: string
+  /** 首页精选项目 */
+  featured?: boolean
 }
 
 export type ProjectGroup = {
@@ -16,6 +18,7 @@ export const projectGroups: ProjectGroup[] = [
     items: [
       {
         name: 'SubscribeManager',
+        featured: true,
         description: '合租订阅管理平台，PHP → Flask → Django 迭代至今。',
         tech: ['Django', 'Python'],
       },
@@ -50,6 +53,7 @@ export const projectGroups: ProjectGroup[] = [
       },
       {
         name: 'gzgspd',
+        featured: true,
         description: '广州工商学院校园网登录守护进程。',
         tech: ['Go', 'Shell'],
         url: 'https://github.com/SummonHIM/gzgspd',
@@ -90,6 +94,7 @@ export const projectGroups: ProjectGroup[] = [
     items: [
       {
         name: 'STM32-Car',
+        featured: true,
         description:
           '嵌入式期末作业 · STM32 智能小车（红外 / 超声波 / OLED 等外设）。',
         tech: ['STM32', 'C'],
@@ -101,6 +106,7 @@ export const projectGroups: ProjectGroup[] = [
       },
       {
         name: 'bobac-px4',
+        featured: true,
         description: 'ROBOTAC 比赛 · 机械臂 + 无人机协同。',
         tech: ['ROS2', 'PX4'],
       },
@@ -111,6 +117,7 @@ export const projectGroups: ProjectGroup[] = [
     items: [
       {
         name: 'koishi-plugin-bili-parser',
+        featured: true,
         description: 'Koishi 插件 · 解析 bilibili 链接。',
         tech: ['TypeScript'],
         url: 'https://github.com/SummonHIM/koishi-plugin-bili-parser',
@@ -123,6 +130,7 @@ export const projectGroups: ProjectGroup[] = [
       },
       {
         name: 'MHR-SB-CHS-CT',
+        featured: true,
         description: '怪物猎人崛起 / 曙光修改器汉化。',
         tech: ['Shell'],
         url: 'https://github.com/SummonHIM/MHR-SB-CHS-CT',

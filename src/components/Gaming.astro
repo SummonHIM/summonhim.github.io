@@ -1,5 +1,6 @@
 ---
 import { gamingIntro, gamingChannels } from '../data/gaming'
+import Icon from './Icon.astro'
 ---
 
 <section id="gaming" class="gaming">
@@ -9,7 +10,10 @@ import { gamingIntro, gamingChannels } from '../data/gaming'
     <div class="grid">
       {gamingChannels.map((c) => (
         <a class="card" href={c.url} target="_blank" rel="noopener">
-          <h3>{c.name}</h3>
+          <h3>
+            <Icon name={c.icon} size={18} />
+            {c.name}
+          </h3>
           <p class="desc">{c.description}</p>
           <span class="link">加入</span>
         </a>
@@ -26,7 +30,7 @@ import { gamingIntro, gamingChannels } from '../data/gaming'
 
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1rem;
   }
 
@@ -46,8 +50,15 @@ import { gamingIntro, gamingChannels } from '../data/gaming'
   }
 
   .card h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     margin: 0;
     font-size: 1.05rem;
+  }
+
+  .card h3 :global(.icon) {
+    color: var(--accent-text);
   }
 
   .desc {
@@ -58,7 +69,7 @@ import { gamingIntro, gamingChannels } from '../data/gaming'
   }
 
   .link {
-    color: var(--accent);
+    color: var(--accent-text);
     font-size: 0.9rem;
     font-weight: 600;
   }

@@ -1,3 +1,5 @@
+import type { IconName } from '../icons'
+
 export type Service = {
   name: string
   note: string
@@ -5,6 +7,7 @@ export type Service = {
 
 export type ServiceGroup = {
   title: string
+  icon: IconName
   items: Service[]
 }
 
@@ -16,45 +19,70 @@ export const aboutIntro: string[] = [
 export const serviceGroups: ServiceGroup[] = [
   {
     title: '网络',
+    icon: 'globe',
     items: [
       { name: 'OPNsense', note: '主路由与防火墙' },
-      { name: 'Headscale', note: '自建 Tailscale 控制面' },
+      { name: 'OpenWrt', note: '软路由系统' },
+      { name: 'Headscale', note: '自建 Tailscale 控制面，异地组网' },
+      { name: 'Caddy / Nginx', note: '反向代理与 TLS 终止' },
     ],
   },
   {
     title: '数据与文件',
+    icon: 'database',
     items: [
       { name: 'Nextcloud', note: '文件、日历与通讯录，支持 WebDAV' },
-      { name: 'Syncthing', note: '服务器、电脑、手机三端同步' },
+      { name: 'Syncthing', note: '服务器、电脑、手机多端双向同步' },
+      {
+        name: '数据库',
+        note: 'MySQL、MariaDB、SQLite、Redis、Neo4j',
+      },
     ],
   },
   {
     title: '身份与安全',
+    icon: 'shield',
     items: [
-      { name: 'Authentik', note: '统一 SSO，所有自建服务的入口' },
-      { name: 'Vaultwarden', note: '密码与两步验证' },
-      { name: 'LDAP / SSSD', note: 'Linux 侧接入统一目录' },
+      { name: 'Authentik', note: '统一 SSO，所有自建服务的登录入口' },
+      { name: 'Vaultwarden', note: '密码与两步验证，多端同步' },
+      { name: 'LDAP / SSSD', note: 'Linux 侧接入统一目录与账号' },
     ],
   },
   {
     title: '媒体与通信',
+    icon: 'play',
     items: [
-      { name: 'Jellyfin', note: '影视库' },
+      { name: 'Jellyfin', note: '影视库，多端播放' },
       { name: 'Stalwart', note: '邮件服务器，配置了 SPF / DMARC' },
       { name: 'Mumble', note: '低延迟开黑语音' },
+      { name: 'Matrix', note: '自建聊天服务器' },
     ],
   },
   {
     title: '硬件与虚拟化',
+    icon: 'server',
     items: [
-      { name: 'Proxmox VE', note: '虚拟化平台' },
-      { name: 'Wisteria', note: 'i3-9100F 应用服务器' },
-      { name: 'Janus', note: '6405U 工控机，专职路由' },
-      { name: 'one-kvm', note: '香橙派 P3 实现的 IPMI 远程管理' },
+      { name: 'Proxmox VE', note: '虚拟化平台，KVM 虚拟机与 LXC' },
+      { name: 'Docker / Linux', note: '容器化部署与服务器运维' },
+      { name: 'Grafana', note: '监控与可视化面板' },
     ],
   },
   {
     title: '开发',
-    items: [{ name: '订阅管理器', note: 'Django + DRF 写的订阅分发工具' }],
+    icon: 'code',
+    items: [
+      {
+        name: '语言',
+        note: 'Python、Go、TypeScript / JavaScript、C、C#、PHP、Bash',
+      },
+      {
+        name: '后端 / 前端',
+        note: 'Django / DRF、Flask、Vue 3、React / Next.js、Tailwind CSS',
+      },
+      {
+        name: '嵌入式',
+        note: 'STM32 (HAL)、STC8H (C51)、Keil',
+      },
+    ],
   },
 ]

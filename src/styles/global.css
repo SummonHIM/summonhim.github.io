@@ -1,6 +1,8 @@
 @font-face {
   font-family: 'LT Fuzz';
-  src: url('/fonts/LTFuzz-Regular.ttf') format('truetype');
+  src:
+    url('/fonts/LTFuzz-Regular.woff2') format('woff2'),
+    url('/fonts/LTFuzz-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -13,6 +15,7 @@
   --text: #17171a;
   --text-muted: #6b7280;
   --accent: #ffb900;
+  --accent-text: #a16207;
   --accent-soft: rgba(255, 185, 0, 0.12);
   --card: #ffffff;
   --border: #e5e7eb;
@@ -25,6 +28,7 @@ html[data-theme='dark'] {
   --text: #f2f2f3;
   --text-muted: #9ca3af;
   --accent: #ffb900;
+  --accent-text: #ffb900;
   --accent-soft: rgba(255, 185, 0, 0.14);
   --card: #1a1a1e;
   --border: #2a2a2f;
@@ -71,6 +75,22 @@ a {
   padding: 0 1.5rem;
 }
 
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #17171a;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
 section {
   padding: 4rem 0;
 }
@@ -100,7 +120,7 @@ section {
 }
 
 .prose a {
-  color: var(--accent);
+  color: var(--accent-text);
   text-decoration: underline;
 }
 
@@ -121,4 +141,17 @@ section {
 
 .prose strong {
   font-weight: 700;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }

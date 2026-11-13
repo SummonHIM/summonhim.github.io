@@ -1,6 +1,6 @@
 ---
 import { aboutIntro, serviceGroups } from '../data/about'
-import { tags } from '../data/tags'
+import Icon from './Icon.astro'
 ---
 
 <section id="about" class="about">
@@ -8,13 +8,16 @@ import { tags } from '../data/tags'
     <h2 class="section-title">关于我</h2>
     <div class="intro">
       {aboutIntro.map((p) => (
-        <p>{p}</p>
+        <p set:html={p.replace(/([。！？])(?!$)/g, '$1<br />')} />
       ))}
     </div>
     <div class="stack">
       {serviceGroups.map((group) => (
         <div class="stack-group">
-          <h3>{group.title}</h3>
+          <h3>
+            <Icon name={group.icon} size={14} />
+            {group.title}
+          </h3>
           <ul>
             {group.items.map((item) => (
               <li>
@@ -24,11 +27,6 @@ import { tags } from '../data/tags'
             ))}
           </ul>
         </div>
-      ))}
-    </div>
-    <div class="tags">
-      {tags.map((t) => (
-        <span class="tag">{t}</span>
       ))}
     </div>
   </div>
@@ -42,7 +40,7 @@ import { tags } from '../data/tags'
   .intro p {
     margin: 0 0 0.75rem;
     color: var(--text-muted);
-    text-wrap: balance;
+    text-wrap: pretty;
   }
 
   .stack {
@@ -59,11 +57,14 @@ import { tags } from '../data/tags'
   }
 
   .stack-group h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
     margin: 0 0 0.75rem;
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.08em;
-    color: var(--accent);
+    color: var(--accent-text);
   }
 
   .stack-group ul {
@@ -86,21 +87,6 @@ import { tags } from '../data/tags'
   }
 
   .note {
-    color: var(--text-muted);
-  }
-
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 2rem;
-  }
-
-  .tag {
-    padding: 0.25rem 0.75rem;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    font-size: 0.85rem;
     color: var(--text-muted);
   }
 

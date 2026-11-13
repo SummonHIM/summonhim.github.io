@@ -42,6 +42,62 @@ test('返回按钮从法律页回到首页', async ({ page }) => {
   await expect(page).toHaveURL(/\/$/)
 })
 
+test('联系方式悬停显示在线频率，微信弹出微信号', async ({ page }) => {
+  await page.goto('/')
+  const social = page.locator('.social')
+
+  const labels = (await social.locator('.social-label').allTextContents()).map(
+    (s) => s.trim(),
+  )
+  expect(labels).toEqual([
+    '邮箱',
+    'QQ',
+    'Steam',
+    '微信',
+    'Telegram',
+    'BiliBili',
+    'GitHub',
+    'Bluesky',
+    'Matrix',
+  ])
+
+  const firstWrap = social.locator('.social-wrap').first()
+  const first = firstWrap.locator('.social-item')
+  await expect(first).toHaveAccessibleName('邮箱')
+  await first.hover()
+  await expect(firstWrap.locator('.tip')).toBeVisible()
+  await expect(firstWrap.locator('.tip')).toHaveText('经常在线')
+
+  await social.getByRole('button', { name: '微信' }).click()
+  const dialog = page.locator('#wechat-dialog')
+  await expect(dialog).toBeVisible()
+  await expect(dialog).toContainText('微信号：SummonHIM')
+
+  await dialog.getByRole('button', { name: '关闭' }).click()
+  await expect(dialog).toBeHidden()
+
+  await social.getByRole('button', { name: 'QQ' }).click()
+  const qqDialog = page.locator('#qq-dialog')
+  await expect(qqDialog).toBeVisible()
+  await expect(qqDialog).toContainText('QQ号：')
+  await expect(qqDialog).toContainText('QID：')
+  const qqNumberLink = qqDialog.getByRole('link', { name: '2239760702' })
+  const qqIdLink = qqDialog.getByRole('link', { name: 'SummonHIM' })
+  await expect(qqNumberLink).toBeVisible()
+  await expect(qqIdLink).toBeVisible()
+  await expect(qqNumberLink).toHaveAttribute(
+    'href',
+    'https://qm.qq.com/q/lYZ8auKT72',
+  )
+  await expect(qqIdLink).toHaveAttribute(
+    'href',
+    'https://qm.qq.com/q/lYZ8auKT72',
+  )
+
+  await qqDialog.getByRole('button', { name: '关闭' }).click()
+  await expect(qqDialog).toBeHidden()
+})
+
 test('点击 HIM 彩蛋打开 Herobrine 维基', async ({ page }) => {
   await page.goto('/')
   const him = page.locator('#him')

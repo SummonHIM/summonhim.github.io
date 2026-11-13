@@ -9,31 +9,41 @@ import { projectGroups } from '../data/projects'
       <div class="group">
         <h3 class="group-title">{group.title}</h3>
         <div class="grid">
-          {group.items.map((p) => (
-            <article class="card">
-              <h4>{p.name}</h4>
-              <p class="desc">{p.description}</p>
-              <div class="tech">
-                {p.tech.map((t) => (
-                  <span class="tech-tag">{t}</span>
-                ))}
-              </div>
-              {p.url && (
-                <a
-                  class="card-link"
-                  href={p.url}
-                  target="_blank"
-                  rel="noopener"
-                  aria-label={`访问 ${p.name}`}
-                >
-                  访问
-                </a>
-              )}
-            </article>
-          ))}
+          {group.items
+            .filter((p) => p.featured)
+            .map((p) => (
+              <article class="card">
+                <h4>{p.name}</h4>
+                <p class="desc">{p.description}</p>
+                <div class="tech">
+                  {p.tech.map((t) => (
+                    <span class="tech-tag">{t}</span>
+                  ))}
+                </div>
+                {p.url && (
+                  <a
+                    class="card-link"
+                    href={p.url}
+                    target="_blank"
+                    rel="noopener"
+                    aria-label={`访问 ${p.name}`}
+                  >
+                    访问
+                  </a>
+                )}
+              </article>
+            ))}
         </div>
       </div>
     ))}
+    <a
+      class="more"
+      href="https://github.com/SummonHIM"
+      target="_blank"
+      rel="noopener"
+    >
+      更多项目 → GitHub
+    </a>
   </div>
 </section>
 
@@ -50,7 +60,7 @@ import { projectGroups } from '../data/projects'
 
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1rem;
   }
 
@@ -62,6 +72,11 @@ import { projectGroups } from '../data/projects'
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    transition: border-color 0.15s ease;
+  }
+
+  .card:hover {
+    border-color: var(--accent);
   }
 
   .card h4 {
@@ -86,14 +101,27 @@ import { projectGroups } from '../data/projects'
     padding: 0.1rem 0.6rem;
     border-radius: 6px;
     background: var(--accent-soft);
-    color: var(--accent);
+    color: var(--accent-text);
     font-size: 0.8rem;
     font-weight: 600;
   }
 
   .card-link {
-    color: var(--accent);
+    color: var(--accent-text);
     font-size: 0.9rem;
     font-weight: 600;
+  }
+
+  .more {
+    display: inline-flex;
+    margin-top: 0.5rem;
+    color: var(--accent-text);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .more:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
 </style>

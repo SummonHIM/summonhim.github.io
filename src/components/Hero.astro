@@ -1,9 +1,14 @@
 ---
 import { profile } from '../data/profile'
-import { links } from '../data/links'
+import { links, availabilityNote, availabilityLevel } from '../data/links'
+import Icon from './Icon.astro'
 import Logo from './Logo.astro'
 
-const social = links.filter((l) => l.href)
+const qq = links.find((l) => l.label === 'QQ')
+
+if (!qq) {
+  throw new Error('QQ contact missing')
+}
 ---
 
 <section id="top" class="hero">
@@ -15,14 +20,108 @@ const social = links.filter((l) => l.href)
     <p class="tagline">{profile.tagline}</p>
     <blockquote class="quote">{profile.quote}</blockquote>
     <div class="social">
-      {social.map((l) => (
-        <a href={l.href} target="_blank" rel="noopener">
-          {l.label}
-        </a>
-      ))}
+      {links.map((l) => {
+        const tipId = `contact-tip-${l.label}`
+        const level = availabilityLevel[l.availability]
+        const label = (
+          <span class="social-label">
+            <Icon name={l.icon} size={15} />
+            {l.label}
+            <span class="mini" aria-hidden="true">
+              <i></i>
+              <i></i>
+              <i></i>
+            </span>
+          </span>
+        )
+
+        return (
+          <span class="social-wrap" data-level={level}>
+            {l.dialog ? (
+              <button
+                type="button"
+                class="social-item"
+                data-dialog={l.dialog}
+                aria-haspopup="dialog"
+                aria-describedby={tipId}
+              >
+                {label}
+              </button>
+            ) : (
+              <a
+                class="social-item"
+                href={l.href}
+                target="_blank"
+                rel="noopener"
+                aria-describedby={tipId}
+              >
+                {label}
+              </a>
+            )}
+            <span class="tip" id={tipId} role="tooltip">
+              <span class="bars" aria-hidden="true">
+                <i></i>
+                <i></i>
+                <i></i>
+              </span>
+              {availabilityNote[l.availability]}
+            </span>
+          </span>
+        )
+      })}
     </div>
   </div>
 </section>
+
+<dialog
+  id="wechat-dialog"
+  class="contact-dialog"
+  aria-labelledby="wechat-dialog-title"
+>
+  <form method="dialog">
+    <button class="dialog-close" type="submit" aria-label="关闭">
+      <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+        <path
+          d="M3 3l10 10M13 3L3 13"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+        ></path>
+      </svg>
+    </button>
+  </form>
+  <h2 id="wechat-dialog-title">微信</h2>
+  <p>
+    微信号：<strong>SummonHIM</strong>
+  </p>
+</dialog>
+
+<dialog id="qq-dialog" class="contact-dialog" aria-labelledby="qq-dialog-title">
+  <form method="dialog">
+    <button class="dialog-close" type="submit" aria-label="关闭">
+      <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+        <path
+          d="M3 3l10 10M13 3L3 13"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+        ></path>
+      </svg>
+    </button>
+  </form>
+  <h2 id="qq-dialog-title">QQ</h2>
+  <p>
+    QQ号：
+    <a class="dialog-link" href={qq.href} target="_blank" rel="noopener">
+      <strong>{qq.value}</strong>
+    </a>
+    <br />
+    QID：
+    <a class="dialog-link" href={qq.href} target="_blank" rel="noopener">
+      {profile.name}
+    </a>
+  </p>
+</dialog>
 
 <style>
   .hero {
@@ -69,21 +168,270 @@ const social = links.filter((l) => l.href)
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.75rem;
+    gap: 0.5rem;
   }
 
-  .social a {
-    padding: 0.35rem 1rem;
+  .social-wrap {
+    position: relative;
+    display: inline-flex;
+  }
+
+  .social-item {
+    padding: 0.35rem 0.75rem;
     border: 1px solid var(--border);
     border-radius: 999px;
+    background: transparent;
+    font-family: inherit;
     font-size: 0.9rem;
+    line-height: inherit;
     color: var(--text-muted);
+    cursor: pointer;
     transition: all 0.15s ease;
   }
 
-  .social a:hover {
+  .social-item:hover,
+  .social-item:focus-visible {
     color: var(--text);
     border-color: var(--accent);
     background: var(--accent-soft);
   }
+
+  .social-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .tip {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.65rem;
+    border-radius: 6px;
+    background: var(--text);
+    color: var(--bg);
+    font-size: 0.78rem;
+    line-height: 1.4;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, 4px);
+    transition:
+      opacity 0.15s ease,
+      transform 0.15s ease,
+      visibility 0.15s;
+  }
+
+  .bars {
+    display: inline-flex;
+    align-items: flex-end;
+    gap: 2px;
+    height: 11px;
+  }
+
+  .bars i {
+    width: 3px;
+    border-radius: 1px;
+    background: currentColor;
+    opacity: 0.28;
+  }
+
+  .bars i:nth-child(1) {
+    height: 4px;
+  }
+
+  .bars i:nth-child(2) {
+    height: 7px;
+  }
+
+  .bars i:nth-child(3) {
+    height: 11px;
+  }
+
+  .social-wrap[data-level='1'] {
+    --light: #ef4444;
+  }
+
+  .social-wrap[data-level='2'] {
+    --light: #eab308;
+  }
+
+  .social-wrap[data-level='3'] {
+    --light: #22c55e;
+  }
+
+  .social-wrap[data-level='1'] .bars i:nth-child(1),
+  .social-wrap[data-level='2'] .bars i:nth-child(-n + 2),
+  .social-wrap[data-level='3'] .bars i {
+    background: var(--light);
+    opacity: 1;
+  }
+
+  .mini {
+    display: none;
+  }
+
+  .tip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: var(--text);
+  }
+
+  .social-wrap:hover .tip,
+  .social-wrap:focus-within .tip {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+  }
+
+  @media (hover: none) {
+    .tip {
+      display: none;
+    }
+
+    .mini {
+      display: inline-flex;
+      align-items: flex-end;
+      gap: 1px;
+      height: 8px;
+    }
+
+    .mini i {
+      width: 2px;
+      border-radius: 1px;
+      background: currentColor;
+      opacity: 0.3;
+    }
+
+    .mini i:nth-child(1) {
+      height: 3px;
+    }
+
+    .mini i:nth-child(2) {
+      height: 5px;
+    }
+
+    .mini i:nth-child(3) {
+      height: 8px;
+    }
+
+    .social-wrap[data-level='1'] .mini i:nth-child(1),
+    .social-wrap[data-level='2'] .mini i:nth-child(-n + 2),
+    .social-wrap[data-level='3'] .mini i {
+      background: var(--light);
+      opacity: 1;
+    }
+  }
+
+  .contact-dialog {
+    max-width: min(90vw, 340px);
+    padding: 1.5rem 1.75rem;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--card);
+    color: var(--text);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+
+  .contact-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(2px);
+  }
+
+  .contact-dialog h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .contact-dialog p {
+    margin: 0;
+    color: var(--text-muted);
+  }
+
+  .contact-dialog strong {
+    color: var(--text);
+    font-size: 1.05rem;
+    user-select: all;
+  }
+
+  .dialog-link {
+    color: var(--accent-text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .dialog-link strong {
+    color: inherit;
+    font-size: 1rem;
+  }
+
+  .dialog-close {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  .dialog-close:hover,
+  .dialog-close:focus-visible {
+    color: var(--text);
+    background: var(--accent-soft);
+  }
+
+  @media (max-width: 640px) {
+    .social {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    .social-wrap {
+      display: flex;
+    }
+
+    .social-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 0.35rem 0.4rem;
+      font-size: 0.85rem;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .social {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .social-wrap:last-child {
+      grid-column: span 2;
+    }
+  }
 </style>
+
+<script>
+  import { initContactDialogs } from '../scripts/contact'
+
+  initContactDialogs()
+</script>
