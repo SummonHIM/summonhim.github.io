@@ -42,7 +42,7 @@ test('返回按钮从法律页回到首页', async ({ page }) => {
   await expect(page).toHaveURL(/\/$/)
 })
 
-test('联系方式悬停显示在线频率，微信弹出微信号', async ({ page }) => {
+test('联系方式悬停显示在线频率，微信弹出微信号', async ({ page }, testInfo) => {
   await page.goto('/')
   const social = page.locator('.social')
 
@@ -64,9 +64,16 @@ test('联系方式悬停显示在线频率，微信弹出微信号', async ({ pa
   const firstWrap = social.locator('.social-wrap').first()
   const first = firstWrap.locator('.social-item')
   await expect(first).toHaveAccessibleName('邮箱')
-  await first.hover()
-  await expect(firstWrap.locator('.tip')).toBeVisible()
-  await expect(firstWrap.locator('.tip')).toHaveText('经常在线')
+
+  if (testInfo.project.name.includes('mobile')) {
+    // 触屏没有 hover，提示层隐藏，改为胶囊内常驻信号条
+    await expect(firstWrap.locator('.tip')).toBeHidden()
+    await expect(firstWrap.locator('.mini')).toBeVisible()
+  } else {
+    await first.hover()
+    await expect(firstWrap.locator('.tip')).toBeVisible()
+    await expect(firstWrap.locator('.tip')).toHaveText('经常在线')
+  }
 
   await social.getByRole('button', { name: '微信' }).click()
   const dialog = page.locator('#wechat-dialog')
