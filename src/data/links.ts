@@ -77,6 +77,13 @@ const rawLinks: Link[] = [
     availability: '偶尔',
   },
   {
+    label: 'Twitter',
+    icon: 'x',
+    value: 'SummonH1M',
+    href: 'https://x.com/SummonH1M',
+    availability: '偶尔',
+  },
+  {
     label: 'GitHub',
     icon: 'github',
     value: 'SummonHIM',

@@ -56,6 +56,7 @@ test('联系方式悬停显示在线频率，微信弹出微信号', async ({ pa
     '微信',
     'Telegram',
     'BiliBili',
+    'Twitter',
     'GitHub',
     'Bluesky',
     'Matrix',
