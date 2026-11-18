@@ -91,13 +91,6 @@ const rawLinks: Link[] = [
     availability: '不经常',
   },
   {
-    label: 'Bluesky',
-    icon: 'bluesky',
-    value: 'summonhim.bsky.summonhim.top',
-    href: 'https://bsky.app/profile/summonhim.bsky.summonhim.top',
-    availability: '不经常',
-  },
-  {
     label: 'Matrix',
     icon: 'matrix',
     value: '@summonhim:matrix.summonhim.top',
