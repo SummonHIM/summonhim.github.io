@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clientConfig version="1.1">
+	<emailProvider id="summonhim.top">
+		<domain>summonhim.top</domain>
+		<displayName>SummonHIM Mail</displayName>
+		<displayShortName>SummonHIM</displayShortName>
+		<incomingServer type="imap">
+			<hostname>mail.summonhim.top</hostname>
+			<port>993</port>
+			<socketType>SSL</socketType>
+			<username>%EMAILADDRESS%</username>
+			<authentication>password-cleartext</authentication>
+		</incomingServer>
+		<incomingServer type="pop3">
+			<hostname>mail.summonhim.top</hostname>
+			<port>995</port>
+			<socketType>SSL</socketType>
+			<username>%EMAILADDRESS%</username>
+			<authentication>password-cleartext</authentication>
+		</incomingServer>
+		<outgoingServer type="smtp">
+			<hostname>mail.summonhim.top</hostname>
+			<port>465</port>
+			<socketType>SSL</socketType>
+			<username>%EMAILADDRESS%</username>
+			<authentication>password-cleartext</authentication>
+		</outgoingServer>
+	</emailProvider>
+	<calendar type="caldav">
+		<username>%EMAILADDRESS%</username>
+		<authentication>http-basic</authentication>
+		<serverURL>https://mail.summonhim.top:2053/dav/cal</serverURL>
+	</calendar>
+	<addressBook type="carddav">
+		<username>%EMAILADDRESS%</username>
+		<authentication>http-basic</authentication>
+		<serverURL>https://mail.summonhim.top:2053/dav/card</serverURL>
+	</addressBook>
+	<fileShare type="webdav">
+		<username>%EMAILADDRESS%</username>
+		<authentication>http-basic</authentication>
+		<serverURL>https://mail.summonhim.top:2053/dav/file</serverURL>
+	</fileShare>
+	<clientConfigUpdate url="https://summonhim.top/.well-known/autoconfig/mail/config-v1.1.xml"/>
+</clientConfig>
